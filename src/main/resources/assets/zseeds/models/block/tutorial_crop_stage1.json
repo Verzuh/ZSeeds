@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "zseeds:blocks/tutorial_crop_stage_1"
+    }
+}

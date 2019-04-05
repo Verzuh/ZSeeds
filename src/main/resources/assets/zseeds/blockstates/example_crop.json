@@ -1,0 +1,13 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "cross"
+    },
+    "variants": {
+        "age=0": { "model": "zseeds:tutorial_crop_stage0" },
+        "age=1": { "model": "zseeds:tutorial_crop_stage1" },
+        "age=2": { "model": "zseeds:tutorial_crop_stage2" },
+        "age=3": { "model": "zseeds:tutorial_crop_stage3" },
+        "age=4": { "model": "zseeds:tutorial_crop_stage4" }
+    }
+}

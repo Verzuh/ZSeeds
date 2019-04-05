@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "zseeds:example_block" }
+        ]
+    }
+}
