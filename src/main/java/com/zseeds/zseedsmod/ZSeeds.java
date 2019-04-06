@@ -2,6 +2,7 @@ package com.zseeds.zseedsmod;
 
 import com.zseeds.zseedsmod.init.ModBlocks;
 import com.zseeds.zseedsmod.init.ModItems;
+import com.zseeds.zseedsmod.init.ModRecipes;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -21,6 +22,7 @@ public class ZSeeds {
 		System.out.println(Reference.MODID + ":preInit");
 		ModItems.init();
 		ModBlocks.init();
+		ModRecipes.init();
 	}
 	
 	@EventHandler

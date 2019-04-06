@@ -1,0 +1,27 @@
+{ 
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "AAA",
+    "ASA",
+    "AAA"
+  ],
+  "key":
+  {
+    "A": 
+    {
+        "item": "minecraft:wheat_seeds",
+        "data": 0
+    },
+    "S":
+    {
+        "item": "minecraft:skull",
+        "data": 2
+    }
+  },
+  "result":
+  {
+    "item": "zseeds:example_seeds",
+    "data": 0
+  }
+}
