@@ -3,3 +3,6 @@ tile.example_block.name=example_block
 item.example_seeds.name=Zombie Seeds
 
 itemGroup.tabExampleMod=ZSeeds
+
+entity.IronZombie.name=Iron Zombie
+entity.DefaultZombie.name=Zombie

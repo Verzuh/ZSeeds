@@ -1,6 +1,7 @@
 package com.zseeds.zseedsmod;
 
 import com.zseeds.zseedsmod.init.ModBlocks;
+import com.zseeds.zseedsmod.init.ModEntities;
 import com.zseeds.zseedsmod.init.ModItems;
 import com.zseeds.zseedsmod.init.ModRecipes;
 
@@ -23,6 +24,8 @@ public class ZSeeds {
 		ModItems.init();
 		ModBlocks.init();
 		ModRecipes.init();
+		ModEntities.init();
+		ModEntities.initModels();
 	}
 	
 	@EventHandler

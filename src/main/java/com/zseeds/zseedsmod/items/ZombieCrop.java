@@ -14,6 +14,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -46,11 +47,21 @@ public class ZombieCrop extends BlockCrops {
 	@Override
 	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
 		if(this.getAge(state) == 4) {
-			Entity mob = EntityList.createEntityByID(54, worldIn);
-			mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
-			worldIn.spawnEntity(mob);
 			
-			worldIn.destroyBlock(pos, true);
+			IBlockState soil = worldIn.getBlockState(pos.down().down());
+			if(soil.getBlock() == Blocks.IRON_BLOCK) {
+				ResourceLocation name = new ResourceLocation("zseeds:iron_zombie");
+				Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
+				mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
+				worldIn.spawnEntity(mob);
+			} else {
+				ResourceLocation name = new ResourceLocation("zseeds:default_zombie");
+				Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
+				mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
+				worldIn.spawnEntity(mob);
+			}
+			
+			worldIn.destroyBlock(pos, false);
 		}
 	}
 
@@ -81,9 +92,6 @@ public class ZombieCrop extends BlockCrops {
 		if (rand.nextInt(3) == 0)
 		{
 			this.checkAndDropBlock(worldIn, pos, state);
-			//Entity mob = EntityList.createEntityByID(54, worldIn);
-			//mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
-			//worldIn.spawnEntity(mob);
 		}
 		else
 		{
