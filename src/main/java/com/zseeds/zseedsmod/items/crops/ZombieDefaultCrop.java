@@ -1,4 +1,4 @@
-package com.zseeds.zseedsmod.items;
+package com.zseeds.zseedsmod.items.crops;
 
 import java.util.Random;
 
@@ -6,6 +6,7 @@ import com.zseeds.zseedsmod.init.ModBlocks;
 import com.zseeds.zseedsmod.init.ModItems;
 
 import net.minecraft.block.BlockCrops;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
@@ -21,15 +22,16 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class ZombieCrop extends BlockCrops {
+public class ZombieDefaultCrop extends BlockCrops {
 
 	public static final PropertyInteger CROP_AGE = PropertyInteger.create("age", 0, 4);
 	private static final AxisAlignedBB[] CROP_AABB = new AxisAlignedBB[] {new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.25D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.35D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.40D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D)};
 
-	public ZombieCrop(String name) {
+	public ZombieDefaultCrop(String name) {
 		super();
 		this.setRegistryName(name);
 		this.setUnlocalizedName(name);
+		this.setSoundType(SoundType.STONE);
 	}
 
 	protected boolean canSustainBush(IBlockState state)
@@ -49,7 +51,7 @@ public class ZombieCrop extends BlockCrops {
 		if(this.getAge(state) == 4) {
 			
 			IBlockState soil = worldIn.getBlockState(pos.down().down());
-			if(soil.getBlock() == Blocks.IRON_BLOCK) {
+			if(soil.getBlock() == Blocks.IRON_BLOCK && random.nextInt(9) < 3) {
 				ResourceLocation name = new ResourceLocation("zseeds:iron_zombie");
 				Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
 				mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
@@ -61,7 +63,7 @@ public class ZombieCrop extends BlockCrops {
 				worldIn.spawnEntity(mob);
 			}
 			
-			worldIn.destroyBlock(pos, false);
+			worldIn.destroyBlock(pos, true);
 		}
 	}
 
@@ -78,13 +80,7 @@ public class ZombieCrop extends BlockCrops {
 	@Override
 	protected Item getSeed()
 	{
-		return ModItems.exampleSeeds;
-	}
-
-	@Override
-	protected Item getCrop()
-	{
-		return ModItems.exampleItem;
+		return ModItems.defaultSeeds;
 	}
 
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)

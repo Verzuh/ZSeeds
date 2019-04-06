@@ -1,7 +1,7 @@
 package com.zseeds.zseedsmod.init;
 
 import com.zseeds.zseedsmod.items.ExampleItem;
-import com.zseeds.zseedsmod.items.ZombieSeeds;
+import com.zseeds.zseedsmod.items.seeds.ZombieDefaultSeeds;
 import com.zseeds.zseedsmod.Reference;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -19,7 +19,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ModItems {
 	
 	public static Item exampleItem;
-	public static Item exampleSeeds;
+	public static Item defaultSeeds;
+	public static Item ZombieIronSeeds;
 	
 	public static final CreativeTabs tabExampleMod = new CreativeTabs("tabExampleMod") {
 
@@ -47,7 +48,8 @@ public class ModItems {
 	@SubscribeEvent
 	public static void registerRenders(ModelRegistryEvent event) {
 		registerRender(exampleItem);
-		registerRender(exampleSeeds);
+		registerRender(defaultSeeds);
+		registerRender(ZombieIronSeeds);
 	}
 	
 	private static void registerRender(Item item) {

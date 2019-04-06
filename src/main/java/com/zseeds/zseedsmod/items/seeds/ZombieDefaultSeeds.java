@@ -1,4 +1,4 @@
-package com.zseeds.zseedsmod.items;
+package com.zseeds.zseedsmod.items.seeds;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
@@ -12,12 +12,12 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ZombieSeeds extends ItemSeeds {
+public class ZombieDefaultSeeds extends ItemSeeds {
 
 	private final Block crops;
     private final Block soilBlock;
 	
-	public ZombieSeeds(Block crops, Block soil, String name) {
+	public ZombieDefaultSeeds(Block crops, Block soil, String name) {
 		super(crops, soil);
 		this.crops = crops;
 		this.soilBlock = soil;

@@ -1,6 +1,7 @@
 item.example_item.name=example_item
 tile.example_block.name=example_block
 item.example_seeds.name=Zombie Seeds
+item.zombie_iron_seeds.name=Iron Zombie Seeds
 
 itemGroup.tabExampleMod=ZSeeds
 
