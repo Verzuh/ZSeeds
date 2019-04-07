@@ -33,6 +33,11 @@ public class ZombieIronCrop extends BlockCrops {
 		this.setUnlocalizedName(name);
 		this.setSoundType(SoundType.STONE);
 	}
+	
+	@Override
+	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+		return false;
+	}
 
 	protected boolean canSustainBush(IBlockState state)
 	{
@@ -150,11 +155,6 @@ public class ZombieIronCrop extends BlockCrops {
                 }
             }
 		}
-	}
-
-	protected int getBonemealAgeIncrease(World worldIn)
-	{
-		return MathHelper.getInt(worldIn.rand, 1, 3);
 	}
 
 	protected BlockStateContainer createBlockState()
