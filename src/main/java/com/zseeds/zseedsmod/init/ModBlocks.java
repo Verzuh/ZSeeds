@@ -1,6 +1,6 @@
 package com.zseeds.zseedsmod.init;
 
-import com.zseeds.zseedsmod.blocks.ExampleBlock;
+import com.zseeds.zseedsmod.blocks.MutationBlock;
 import com.zseeds.zseedsmod.items.crops.ZombieDefaultCrop;
 import com.zseeds.zseedsmod.items.crops.ZombieIronCrop;
 import com.zseeds.zseedsmod.items.seeds.ZombieDefaultSeeds;
@@ -23,7 +23,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Mod.EventBusSubscriber(modid=Reference.MODID)
 public class ModBlocks {
 
-	public static Block exampleBlock;
+	public static Block MutationBlock;
 	static Block exampleCrop;
 	static Block ZombieIronCrop;
 	
@@ -32,20 +32,20 @@ public class ModBlocks {
 	}
 	
 	public static void init() {
-		exampleBlock = new ExampleBlock("example_block", Material.ROCK).setHardness(1.5f).setCreativeTab(ModItems.tabExampleMod).setLightLevel(1.0f);
-		exampleBlock.setHarvestLevel("pickaxe", 2);
+		MutationBlock = new MutationBlock("mutation_block", Material.GROUND).setCreativeTab(ModItems.tabExampleMod);
+		MutationBlock.setHarvestLevel("pickaxe", 2);
 		exampleCrop = new ZombieDefaultCrop("example_crop");
 		ZombieIronCrop = new ZombieIronCrop("zombie_iron_crop");
 	}
 	
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
-		event.getRegistry().registerAll(exampleBlock, exampleCrop, ZombieIronCrop);
+		event.getRegistry().registerAll(MutationBlock, exampleCrop, ZombieIronCrop);
 	}
 	
 	@SubscribeEvent
 	public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
-		event.getRegistry().registerAll(new ItemBlock(exampleBlock).setRegistryName(exampleBlock.getRegistryName()));
+		event.getRegistry().registerAll(new ItemBlock(MutationBlock).setRegistryName(MutationBlock.getRegistryName()));
 		ModItems.defaultSeeds = new ZombieDefaultSeeds(ModBlocks.exampleCrop, Blocks.DIRT, "example_seeds").setCreativeTab(ModItems.tabExampleMod);
 		event.getRegistry().register(ModItems.defaultSeeds);
 		ModItems.ZombieIronSeeds = new ZombieIronSeeds(ModBlocks.ZombieIronCrop, Blocks.DIRT, "zombie_iron_seeds").setCreativeTab(ModItems.tabExampleMod);
@@ -54,7 +54,7 @@ public class ModBlocks {
 	
 	@SubscribeEvent
 	public static void registerRenders(ModelRegistryEvent event) {
-		registerRender(Item.getItemFromBlock(exampleBlock));
+		registerRender(Item.getItemFromBlock(MutationBlock));
 	}
 	
 	public static void registerRender(Item item) {

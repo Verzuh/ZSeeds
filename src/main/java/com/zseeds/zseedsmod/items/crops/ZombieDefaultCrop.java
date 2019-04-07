@@ -48,14 +48,32 @@ public class ZombieDefaultCrop extends BlockCrops {
 	
 	@Override
 	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
+		this.updateTick(worldIn, pos, state, random);
 		if(this.getAge(state) == 4) {
 			
-			IBlockState soil = worldIn.getBlockState(pos.down().down());
-			if(soil.getBlock() == Blocks.IRON_BLOCK && random.nextInt(9) < 3) {
-				ResourceLocation name = new ResourceLocation("zseeds:iron_zombie");
-				Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
-				mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
-				worldIn.spawnEntity(mob);
+			int maxRand = 19;
+			
+			IBlockState down = worldIn.getBlockState(pos.down().down());
+			IBlockState north = worldIn.getBlockState(pos.down().north());
+			IBlockState east = worldIn.getBlockState(pos.down().east());
+			IBlockState west = worldIn.getBlockState(pos.down().west());
+			IBlockState south = worldIn.getBlockState(pos.down().south());
+			
+			if(down.getBlock() == Blocks.IRON_BLOCK || north.getBlock() == Blocks.IRON_BLOCK || east.getBlock() == Blocks.IRON_BLOCK || south.getBlock() == Blocks.IRON_BLOCK || west.getBlock() == Blocks.IRON_BLOCK) {
+				if(down.getBlock() == ModBlocks.MutationBlock || north.getBlock() == ModBlocks.MutationBlock || east.getBlock() == ModBlocks.MutationBlock || south.getBlock() == ModBlocks.MutationBlock || west.getBlock() == ModBlocks.MutationBlock) {
+					maxRand = 14;
+				}
+				if(random.nextInt(maxRand) < 4) {
+					ResourceLocation name = new ResourceLocation("zseeds:iron_zombie");
+					Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
+					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					worldIn.spawnEntity(mob);
+				} else {
+					ResourceLocation name = new ResourceLocation("zseeds:default_zombie");
+					Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
+					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					worldIn.spawnEntity(mob);
+				}
 			} else {
 				ResourceLocation name = new ResourceLocation("zseeds:default_zombie");
 				Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
@@ -63,7 +81,7 @@ public class ZombieDefaultCrop extends BlockCrops {
 				worldIn.spawnEntity(mob);
 			}
 			
-			worldIn.destroyBlock(pos, true);
+			worldIn.destroyBlock(pos, false);
 		}
 	}
 
@@ -82,16 +100,36 @@ public class ZombieDefaultCrop extends BlockCrops {
 	{
 		return ModItems.defaultSeeds;
 	}
+	
+	@Override
+	protected Item getCrop() {
+		return null;
+	}
 
+	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	{
-		if (rand.nextInt(3) == 0)
+		if (!worldIn.isAreaLoaded(pos, 1)) return;
+		if (rand.nextInt(10) == 0)
 		{
 			this.checkAndDropBlock(worldIn, pos, state);
 		}
 		else
 		{
 			super.updateTick(worldIn, pos, state, rand);
+			
+			int i = this.getAge(state);
+
+            if (i < this.getMaxAge())
+            {
+                float f = getGrowthChance(this, worldIn, pos);
+
+                if(net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt((int)(25.0F / f) + 1) == 0))
+                {
+                    worldIn.setBlockState(pos, this.withAge(i + 1), 2);
+                    net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state, worldIn.getBlockState(pos));
+                }
+            }
 		}
 	}
 

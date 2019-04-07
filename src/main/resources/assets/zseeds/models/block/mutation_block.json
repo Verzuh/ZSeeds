@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "zseeds:blocks/example_block"
+        "all": "zseeds:blocks/mutation_block"
     }
 }

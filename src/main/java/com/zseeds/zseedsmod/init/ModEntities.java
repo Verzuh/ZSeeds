@@ -3,6 +3,7 @@ package com.zseeds.zseedsmod.init;
 import com.zseeds.zseedsmod.entity.ZombieIron;
 import com.zseeds.zseedsmod.Reference;
 import com.zseeds.zseedsmod.ZSeeds;
+import com.zseeds.zseedsmod.entity.RenderZombieDefault;
 import com.zseeds.zseedsmod.entity.RenderZombieIron;
 import com.zseeds.zseedsmod.entity.ZombieDefault;
 
@@ -28,11 +29,13 @@ public class ModEntities {
         //EntityRegistry.addSpawn(ZombieIron.class, 100, 3, 5, EnumCreatureType.MONSTER, Biomes.PLAINS, Biomes.ICE_PLAINS);
 
         // This is the loot table for our mob
+        LootTableList.register(ZombieDefault.LOOT);
         LootTableList.register(ZombieIron.LOOT);
     }
 
     @SideOnly(Side.CLIENT)
     public static void initModels() {
         RenderingRegistry.registerEntityRenderingHandler(ZombieIron.class, RenderZombieIron.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(ZombieDefault.class, RenderZombieDefault.FACTORY);
     }
 }
