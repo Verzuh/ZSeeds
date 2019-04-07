@@ -22,12 +22,12 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class ZombieDefaultCrop extends BlockCrops {
+public class ZombieBaseCrop extends BlockCrops {
 
 	public static final PropertyInteger CROP_AGE = PropertyInteger.create("age", 0, 4);
 	private static final AxisAlignedBB[] CROP_AABB = new AxisAlignedBB[] {new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.25D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.35D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.40D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D)};
 
-	public ZombieDefaultCrop(String name) {
+	public ZombieBaseCrop(String name) {
 		super();
 		this.setRegistryName(name);
 		this.setUnlocalizedName(name);
@@ -69,13 +69,13 @@ public class ZombieDefaultCrop extends BlockCrops {
 					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
 					worldIn.spawnEntity(mob);
 				} else {
-					ResourceLocation name = new ResourceLocation("zseeds:default_zombie");
+					ResourceLocation name = new ResourceLocation("zseeds:base_zombie");
 					Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
 					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
 					worldIn.spawnEntity(mob);
 				}
 			} else {
-				ResourceLocation name = new ResourceLocation("zseeds:default_zombie");
+				ResourceLocation name = new ResourceLocation("zseeds:base_zombie");
 				Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
 				mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
 				worldIn.spawnEntity(mob);
@@ -98,7 +98,7 @@ public class ZombieDefaultCrop extends BlockCrops {
 	@Override
 	protected Item getSeed()
 	{
-		return ModItems.defaultSeeds;
+		return ModItems.ZombieBaseSeeds;
 	}
 	
 	@Override

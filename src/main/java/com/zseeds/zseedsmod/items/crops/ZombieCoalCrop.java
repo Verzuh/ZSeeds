@@ -69,13 +69,13 @@ public class ZombieCoalCrop extends BlockCrops {
 					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
 					worldIn.spawnEntity(mob);
 				} else {
-					ResourceLocation name = new ResourceLocation("zseeds:default_zombie");
+					ResourceLocation name = new ResourceLocation("zseeds:coal_zombie");
 					Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
 					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
 					worldIn.spawnEntity(mob);
 				}
 			} else {
-				ResourceLocation name = new ResourceLocation("zseeds:default_zombie");
+				ResourceLocation name = new ResourceLocation("zseeds:coal_zombie");
 				Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
 				mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
 				worldIn.spawnEntity(mob);

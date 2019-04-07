@@ -1,7 +1,7 @@
 package com.zseeds.zseedsmod.init;
 
 import com.zseeds.zseedsmod.blocks.MutationBlock;
-import com.zseeds.zseedsmod.items.crops.ZombieDefaultCrop;
+import com.zseeds.zseedsmod.items.crops.ZombieBaseCrop;
 import com.zseeds.zseedsmod.items.crops.ZombieIronCrop;
 import com.zseeds.zseedsmod.items.crops.ZombieCoalCrop;
 import com.zseeds.zseedsmod.items.seeds.ZombieCoalSeeds;
@@ -26,7 +26,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ModBlocks {
 
 	public static Block MutationBlock;
-	static Block exampleCrop;
+	static Block ZombieBaseCrop;
 	static Block ZombieIronCrop;
 	static Block ZombieCoalCrop;
 	
@@ -37,21 +37,21 @@ public class ModBlocks {
 	public static void init() {
 		MutationBlock = new MutationBlock("mutation_block", Material.GROUND).setHardness(1.0F).setCreativeTab(ModItems.tabExampleMod);
 		MutationBlock.setHarvestLevel("pickaxe", 2);
-		exampleCrop = new ZombieDefaultCrop("example_crop");
+		ZombieBaseCrop = new ZombieBaseCrop("zombie_base_crop");
 		ZombieIronCrop = new ZombieIronCrop("zombie_iron_crop");
 		ZombieCoalCrop = new ZombieCoalCrop("zombie_coal_crop");
 	}
 	
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
-		event.getRegistry().registerAll(MutationBlock, exampleCrop, ZombieIronCrop, ZombieCoalCrop);
+		event.getRegistry().registerAll(MutationBlock, ZombieBaseCrop, ZombieIronCrop, ZombieCoalCrop);
 	}
 	
 	@SubscribeEvent
 	public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
 		event.getRegistry().registerAll(new ItemBlock(MutationBlock).setRegistryName(MutationBlock.getRegistryName()));
-		ModItems.defaultSeeds = new ZombieDefaultSeeds(ModBlocks.exampleCrop, Blocks.DIRT, "example_seeds").setCreativeTab(ModItems.tabExampleMod);
-		event.getRegistry().register(ModItems.defaultSeeds);
+		ModItems.ZombieBaseSeeds = new ZombieDefaultSeeds(ModBlocks.ZombieBaseCrop, Blocks.DIRT, "zombie_base_seeds").setCreativeTab(ModItems.tabExampleMod);
+		event.getRegistry().register(ModItems.ZombieBaseSeeds);
 		ModItems.ZombieIronSeeds = new ZombieIronSeeds(ModBlocks.ZombieIronCrop, Blocks.DIRT, "zombie_iron_seeds").setCreativeTab(ModItems.tabExampleMod);
 		event.getRegistry().register(ModItems.ZombieIronSeeds);
 		ModItems.ZombieCoalSeeds = new ZombieCoalSeeds(ModBlocks.ZombieCoalCrop, Blocks.DIRT, "zombie_coal_seeds").setCreativeTab(ModItems.tabExampleMod);

@@ -8,10 +8,10 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class ZombieCoal extends EntityZombie {
-	public static final ResourceLocation LOOT = new ResourceLocation(Reference.MODID, "entities/coal_zombie");
+public class EntityZombieIron extends EntityZombie {
+    public static final ResourceLocation LOOT = new ResourceLocation(Reference.MODID, "entities/iron_zombie");
 
-    public ZombieCoal(World worldIn) {
+    public EntityZombieIron(World worldIn) {
         super(worldIn);
     }
     

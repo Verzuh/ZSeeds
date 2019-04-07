@@ -9,7 +9,7 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 import javax.annotation.Nonnull;
 
-public class RenderZombieIron extends RenderLiving<ZombieIron> {
+public class RenderZombieIron extends RenderLiving<EntityZombieIron> {
 
     private ResourceLocation mobTexture = new ResourceLocation("zseeds:textures/entity/iron_zombie.png");
 
@@ -23,14 +23,14 @@ public class RenderZombieIron extends RenderLiving<ZombieIron> {
 
     @Override
     @Nonnull
-    protected ResourceLocation getEntityTexture(@Nonnull ZombieIron entity) {
+    protected ResourceLocation getEntityTexture(@Nonnull EntityZombieIron entity) {
         return mobTexture;
     }
 
-    public static class Factory implements IRenderFactory<ZombieIron> {
+    public static class Factory implements IRenderFactory<EntityZombieIron> {
 
         @Override
-        public Render<? super ZombieIron> createRenderFor(RenderManager manager) {
+        public Render<? super EntityZombieIron> createRenderFor(RenderManager manager) {
             return new RenderZombieIron(manager);
         }
 

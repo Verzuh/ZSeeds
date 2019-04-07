@@ -1,6 +1,5 @@
 package com.zseeds.zseedsmod.init;
 
-import com.zseeds.zseedsmod.items.ExampleItem;
 import com.zseeds.zseedsmod.items.seeds.ZombieDefaultSeeds;
 import com.zseeds.zseedsmod.Reference;
 
@@ -18,8 +17,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Mod.EventBusSubscriber(modid=Reference.MODID)
 public class ModItems {
 	
-	public static Item exampleItem;
-	public static Item defaultSeeds;
+	public static Item ZombieBaseSeeds;
 	public static Item ZombieIronSeeds;
 	public static Item ZombieCoalSeeds;
 	
@@ -27,7 +25,7 @@ public class ModItems {
 
 		@Override
 		public ItemStack getTabIconItem() {
-			return new ItemStack(exampleItem);
+			return new ItemStack(ZombieBaseSeeds);
 		}
 		
 		@Override
@@ -38,18 +36,17 @@ public class ModItems {
 	}.setBackgroundImageName("item_search.png");
 	
 	public static void init() {
-		exampleItem = new ExampleItem("example_item").setCreativeTab(tabExampleMod).setMaxStackSize(64);
+		
 	}
 	
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event) {
-		event.getRegistry().registerAll(exampleItem);
+		
 	}
 	
 	@SubscribeEvent
 	public static void registerRenders(ModelRegistryEvent event) {
-		registerRender(exampleItem);
-		registerRender(defaultSeeds);
+		registerRender(ZombieBaseSeeds);
 		registerRender(ZombieIronSeeds);
 		registerRender(ZombieCoalSeeds);
 	}

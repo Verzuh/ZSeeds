@@ -9,7 +9,7 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 import javax.annotation.Nonnull;
 
-public class RenderZombieCoal extends RenderLiving<ZombieCoal> {
+public class RenderZombieCoal extends RenderLiving<EntityZombieCoal> {
 
     private ResourceLocation mobTexture = new ResourceLocation("zseeds:textures/entity/coal_zombie.png");
 
@@ -23,14 +23,14 @@ public class RenderZombieCoal extends RenderLiving<ZombieCoal> {
 
     @Override
     @Nonnull
-    protected ResourceLocation getEntityTexture(@Nonnull ZombieCoal entity) {
+    protected ResourceLocation getEntityTexture(@Nonnull EntityZombieCoal entity) {
         return mobTexture;
     }
 
-    public static class Factory implements IRenderFactory<ZombieCoal> {
+    public static class Factory implements IRenderFactory<EntityZombieCoal> {
 
         @Override
-        public Render<? super ZombieCoal> createRenderFor(RenderManager manager) {
+        public Render<? super EntityZombieCoal> createRenderFor(RenderManager manager) {
             return new RenderZombieCoal(manager);
         }
 

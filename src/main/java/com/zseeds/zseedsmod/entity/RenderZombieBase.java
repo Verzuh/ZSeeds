@@ -9,13 +9,13 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 import javax.annotation.Nonnull;
 
-public class RenderZombieDefault extends RenderLiving<ZombieDefault> {
+public class RenderZombieBase extends RenderLiving<EntityZombieBase> {
 
-    private ResourceLocation mobTexture = new ResourceLocation("zseeds:textures/entity/default_zombie.png");
+    private ResourceLocation mobTexture = new ResourceLocation("zseeds:textures/entity/base_zombie.png");
 
     public static final Factory FACTORY = new Factory();
 
-    public RenderZombieDefault(RenderManager rendermanagerIn) {
+    public RenderZombieBase(RenderManager rendermanagerIn) {
         // We use the vanilla zombie model here and we simply
         // retexture it. Of course you can make your own model
         super(rendermanagerIn, new ModelZombie(), 0.5F);
@@ -23,15 +23,15 @@ public class RenderZombieDefault extends RenderLiving<ZombieDefault> {
 
     @Override
     @Nonnull
-    protected ResourceLocation getEntityTexture(@Nonnull ZombieDefault entity) {
+    protected ResourceLocation getEntityTexture(@Nonnull EntityZombieBase entity) {
         return mobTexture;
     }
 
-    public static class Factory implements IRenderFactory<ZombieDefault> {
+    public static class Factory implements IRenderFactory<EntityZombieBase> {
 
         @Override
-        public Render<? super ZombieDefault> createRenderFor(RenderManager manager) {
-            return new RenderZombieDefault(manager);
+        public Render<? super EntityZombieBase> createRenderFor(RenderManager manager) {
+            return new RenderZombieBase(manager);
         }
 
     }

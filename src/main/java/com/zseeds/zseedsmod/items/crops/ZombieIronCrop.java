@@ -53,7 +53,7 @@ public class ZombieIronCrop extends BlockCrops {
 			
 			IBlockState soil = worldIn.getBlockState(pos.down().down());
 			if(soil.getBlock() == Blocks.GOLD_BLOCK && random.nextInt(9) < 3) {
-				ResourceLocation name = new ResourceLocation("zseeds:default_zombie");
+				ResourceLocation name = new ResourceLocation("zseeds:base_zombie");
 				Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
 				mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
 				worldIn.spawnEntity(mob);

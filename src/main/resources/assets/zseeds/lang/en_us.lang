@@ -1,11 +1,11 @@
 item.example_item.name=example_item
 tile.mutation_block.name=Mutated Dirt
-item.example_seeds.name=Zombie Seeds
+item.zombie_base_seeds.name=Zombie Seeds
 item.zombie_iron_seeds.name=Iron Zombie Seeds
 item.zombie_coal_seeds.name=Coal Zombie Seeds
 
 itemGroup.tabExampleMod=ZSeeds
 
-entity.DefaultZombie.name=Zombie
+entity.BaseZombie.name=Zombie
 entity.IronZombie.name=Iron Zombie
 entity.CoalZombie.name=Coal Zombie
