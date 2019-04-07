@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public class EntityZombieBase extends EntityZombie {
-	public static final ResourceLocation LOOT = new ResourceLocation(Reference.MODID, "entities/default_zombie");
+	public static final ResourceLocation LOOT = new ResourceLocation(Reference.MODID, "entities/base_zombie");
 
     public EntityZombieBase(World worldIn) {
         super(worldIn);
