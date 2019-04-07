@@ -1,13 +1,22 @@
 item.example_item.name=example_item
 tile.mutation_block.name=Mutated Dirt
+
+itemGroup.tabExampleMod=ZSeeds
+
 item.zombie_base_seeds.name=Zombie Seeds
 item.zombie_iron_seeds.name=Iron Zombie Seeds
 item.zombie_coal_seeds.name=Coal Zombie Seeds
 item.zombie_gold_seeds.name=Gold Zombie Seeds
-
-itemGroup.tabExampleMod=ZSeeds
+item.zombie_lapis_seeds.name=Lapis Zombie Seeds
+item.zombie_redstone_seeds.name=Redstone Zombie Seeds
+item.zombie_emerald_seeds.name=Emerald Zombie Seeds
+item.zombie_diamond_seeds.name=Diamond Zombie Seeds
 
 entity.BaseZombie.name=Zombie
 entity.IronZombie.name=Iron Zombie
 entity.CoalZombie.name=Coal Zombie
 entity.GoldZombie.name=Gold Zombie
+entity.LapisZombie.name=Lapis Zombie
+entity.RedstoneZombie.name=Redstone Zombie
+entity.EmeraldZombie.name=Emerald Zombie
+entity.DiamondZombie.name=Diamond Zombie

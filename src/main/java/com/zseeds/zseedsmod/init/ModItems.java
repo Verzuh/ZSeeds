@@ -21,6 +21,10 @@ public class ModItems {
 	public static Item ZombieIronSeeds;
 	public static Item ZombieCoalSeeds;
 	public static Item ZombieGoldSeeds;
+	public static Item ZombieLapisSeeds;
+	public static Item ZombieRedstoneSeeds;
+	public static Item ZombieEmeraldSeeds;
+	public static Item ZombieDiamondSeeds;
 	
 	public static final CreativeTabs tabExampleMod = new CreativeTabs("tabExampleMod") {
 
@@ -51,6 +55,10 @@ public class ModItems {
 		registerRender(ZombieIronSeeds);
 		registerRender(ZombieCoalSeeds);
 		registerRender(ZombieGoldSeeds);
+		registerRender(ZombieLapisSeeds);
+		registerRender(ZombieRedstoneSeeds);
+		registerRender(ZombieEmeraldSeeds);
+		registerRender(ZombieDiamondSeeds);
 	}
 	
 	private static void registerRender(Item item) {
