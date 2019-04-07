@@ -7,7 +7,7 @@
         "age=0": { "model": "zseeds:zombie/base/zombie_base_stage0" },
         "age=1": { "model": "zseeds:zombie/base/zombie_base_stage1" },
         "age=2": { "model": "zseeds:zombie/base/zombie_base_stage2" },
-        "age=3": { "model": "zseeds:zombie/iron/zombie_iron_stage3" },
-        "age=4": { "model": "zseeds:zombie/iron/zombie_iron_stage4" }
+        "age=3": { "model": "zseeds:zombie/emerald/zombie_emerald_stage3" },
+        "age=4": { "model": "zseeds:zombie/emerald/zombie_emerald_stage4" }
     }
 }
