@@ -33,12 +33,7 @@ public class ModItems {
 			return new ItemStack(ZombieBaseSeeds);
 		}
 		
-		@Override
-		public boolean hasSearchBar() {
-			return true;
-		}
-		
-	}.setBackgroundImageName("item_search.png");
+	};
 	
 	public static void init() {
 		
