@@ -51,42 +51,7 @@ public class ZombieLapisCrop extends BlockCrops {
 		this.updateTick(worldIn, pos, state, random);
 		if(this.getAge(state) == 4) {
 			
-			int maxRand = 19;
-			
-			IBlockState down = worldIn.getBlockState(pos.down().down());
-			IBlockState north = worldIn.getBlockState(pos.down().north());
-			IBlockState east = worldIn.getBlockState(pos.down().east());
-			IBlockState west = worldIn.getBlockState(pos.down().west());
-			IBlockState south = worldIn.getBlockState(pos.down().south());
-			
-			if(down.getBlock() == Blocks.IRON_BLOCK || north.getBlock() == Blocks.IRON_BLOCK || east.getBlock() == Blocks.IRON_BLOCK || south.getBlock() == Blocks.IRON_BLOCK || west.getBlock() == Blocks.IRON_BLOCK) {
-				if(down.getBlock() == ModBlocks.MutationBlock || north.getBlock() == ModBlocks.MutationBlock || east.getBlock() == ModBlocks.MutationBlock || south.getBlock() == ModBlocks.MutationBlock || west.getBlock() == ModBlocks.MutationBlock) {
-					maxRand = 14;
-				}
-				if(random.nextInt(maxRand) < 4) {
-					ResourceLocation name = new ResourceLocation("zseeds:iron_zombie");
-					Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
-					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
-					worldIn.spawnEntity(mob);
-					worldIn.destroyBlock(pos, false);
-					return;
-				} 
-			} 
-			if(down.getBlock() == Blocks.COAL_BLOCK || north.getBlock() == Blocks.COAL_BLOCK || east.getBlock() == Blocks.COAL_BLOCK || south.getBlock() == Blocks.COAL_BLOCK || west.getBlock() == Blocks.COAL_BLOCK) {
-				if(down.getBlock() == ModBlocks.MutationBlock || north.getBlock() == ModBlocks.MutationBlock || east.getBlock() == ModBlocks.MutationBlock || south.getBlock() == ModBlocks.MutationBlock || west.getBlock() == ModBlocks.MutationBlock) {
-					maxRand = 14;
-				}
-				if(random.nextInt(maxRand) < 4) {
-					ResourceLocation name = new ResourceLocation("zseeds:coal_zombie");
-					Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
-					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
-					worldIn.spawnEntity(mob);
-					worldIn.destroyBlock(pos, false);
-					return;
-				} 
-			}
-			
-			ResourceLocation name = new ResourceLocation("zseeds:base_zombie");
+			ResourceLocation name = new ResourceLocation("zseeds:lapis_zombie");
 			Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
 			mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
 			worldIn.spawnEntity(mob);
