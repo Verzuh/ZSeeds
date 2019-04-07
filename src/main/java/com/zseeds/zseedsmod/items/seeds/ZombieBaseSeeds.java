@@ -12,12 +12,12 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ZombieDefaultSeeds extends ItemSeeds {
+public class ZombieBaseSeeds extends ItemSeeds {
 
 	private final Block crops;
     private final Block soilBlock;
 	
-	public ZombieDefaultSeeds(Block crops, Block soil, String name) {
+	public ZombieBaseSeeds(Block crops, Block soil, String name) {
 		super(crops, soil);
 		this.crops = crops;
 		this.soilBlock = soil;

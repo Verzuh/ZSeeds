@@ -3,9 +3,11 @@ tile.mutation_block.name=Mutated Dirt
 item.zombie_base_seeds.name=Zombie Seeds
 item.zombie_iron_seeds.name=Iron Zombie Seeds
 item.zombie_coal_seeds.name=Coal Zombie Seeds
+item.zombie_gold_seeds.name=Gold Zombie Seeds
 
 itemGroup.tabExampleMod=ZSeeds
 
 entity.BaseZombie.name=Zombie
 entity.IronZombie.name=Iron Zombie
 entity.CoalZombie.name=Coal Zombie
+entity.GoldZombie.name=Gold Zombie

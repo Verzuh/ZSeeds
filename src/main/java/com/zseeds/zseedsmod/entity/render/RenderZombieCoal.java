@@ -1,4 +1,4 @@
-package com.zseeds.zseedsmod.entity;
+package com.zseeds.zseedsmod.entity.render;
 
 import net.minecraft.client.model.ModelZombie;
 import net.minecraft.client.renderer.entity.Render;
@@ -9,13 +9,15 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 import javax.annotation.Nonnull;
 
-public class RenderZombieBase extends RenderLiving<EntityZombieBase> {
+import com.zseeds.zseedsmod.entity.EntityZombieCoal;
 
-    private ResourceLocation mobTexture = new ResourceLocation("zseeds:textures/entity/base_zombie.png");
+public class RenderZombieCoal extends RenderLiving<EntityZombieCoal> {
+
+    private ResourceLocation mobTexture = new ResourceLocation("zseeds:textures/entity/coal_zombie.png");
 
     public static final Factory FACTORY = new Factory();
 
-    public RenderZombieBase(RenderManager rendermanagerIn) {
+    public RenderZombieCoal(RenderManager rendermanagerIn) {
         // We use the vanilla zombie model here and we simply
         // retexture it. Of course you can make your own model
         super(rendermanagerIn, new ModelZombie(), 0.5F);
@@ -23,15 +25,15 @@ public class RenderZombieBase extends RenderLiving<EntityZombieBase> {
 
     @Override
     @Nonnull
-    protected ResourceLocation getEntityTexture(@Nonnull EntityZombieBase entity) {
+    protected ResourceLocation getEntityTexture(@Nonnull EntityZombieCoal entity) {
         return mobTexture;
     }
 
-    public static class Factory implements IRenderFactory<EntityZombieBase> {
+    public static class Factory implements IRenderFactory<EntityZombieCoal> {
 
         @Override
-        public Render<? super EntityZombieBase> createRenderFor(RenderManager manager) {
-            return new RenderZombieBase(manager);
+        public Render<? super EntityZombieCoal> createRenderFor(RenderManager manager) {
+            return new RenderZombieCoal(manager);
         }
 
     }

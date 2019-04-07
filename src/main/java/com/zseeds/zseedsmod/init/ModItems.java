@@ -1,6 +1,6 @@
 package com.zseeds.zseedsmod.init;
 
-import com.zseeds.zseedsmod.items.seeds.ZombieDefaultSeeds;
+import com.zseeds.zseedsmod.items.seeds.ZombieBaseSeeds;
 import com.zseeds.zseedsmod.Reference;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -20,6 +20,7 @@ public class ModItems {
 	public static Item ZombieBaseSeeds;
 	public static Item ZombieIronSeeds;
 	public static Item ZombieCoalSeeds;
+	public static Item ZombieGoldSeeds;
 	
 	public static final CreativeTabs tabExampleMod = new CreativeTabs("tabExampleMod") {
 
@@ -49,6 +50,7 @@ public class ModItems {
 		registerRender(ZombieBaseSeeds);
 		registerRender(ZombieIronSeeds);
 		registerRender(ZombieCoalSeeds);
+		registerRender(ZombieGoldSeeds);
 	}
 	
 	private static void registerRender(Item item) {

@@ -22,12 +22,12 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class ZombieBaseCrop extends BlockCrops {
+public class ZombieGoldCrop extends BlockCrops {
 
 	public static final PropertyInteger CROP_AGE = PropertyInteger.create("age", 0, 4);
 	private static final AxisAlignedBB[] CROP_AABB = new AxisAlignedBB[] {new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.25D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.35D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.40D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D)};
 
-	public ZombieBaseCrop(String name) {
+	public ZombieGoldCrop(String name) {
 		super();
 		this.setRegistryName(name);
 		this.setUnlocalizedName(name);
@@ -59,34 +59,7 @@ public class ZombieBaseCrop extends BlockCrops {
 			IBlockState west = worldIn.getBlockState(pos.down().west());
 			IBlockState south = worldIn.getBlockState(pos.down().south());
 			
-			if(down.getBlock() == Blocks.IRON_BLOCK || north.getBlock() == Blocks.IRON_BLOCK || east.getBlock() == Blocks.IRON_BLOCK || south.getBlock() == Blocks.IRON_BLOCK || west.getBlock() == Blocks.IRON_BLOCK) {
-				if(down.getBlock() == ModBlocks.MutationBlock || north.getBlock() == ModBlocks.MutationBlock || east.getBlock() == ModBlocks.MutationBlock || south.getBlock() == ModBlocks.MutationBlock || west.getBlock() == ModBlocks.MutationBlock) {
-					maxRand = 14;
-				}
-				if(random.nextInt(maxRand) < 4) {
-					ResourceLocation name = new ResourceLocation("zseeds:iron_zombie");
-					Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
-					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
-					worldIn.spawnEntity(mob);
-					worldIn.destroyBlock(pos, false);
-					return;
-				} 
-			} 
-			if(down.getBlock() == Blocks.COAL_BLOCK || north.getBlock() == Blocks.COAL_BLOCK || east.getBlock() == Blocks.COAL_BLOCK || south.getBlock() == Blocks.COAL_BLOCK || west.getBlock() == Blocks.COAL_BLOCK) {
-				if(down.getBlock() == ModBlocks.MutationBlock || north.getBlock() == ModBlocks.MutationBlock || east.getBlock() == ModBlocks.MutationBlock || south.getBlock() == ModBlocks.MutationBlock || west.getBlock() == ModBlocks.MutationBlock) {
-					maxRand = 14;
-				}
-				if(random.nextInt(maxRand) < 4) {
-					ResourceLocation name = new ResourceLocation("zseeds:coal_zombie");
-					Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
-					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
-					worldIn.spawnEntity(mob);
-					worldIn.destroyBlock(pos, false);
-					return;
-				} 
-			}
-			
-			ResourceLocation name = new ResourceLocation("zseeds:base_zombie");
+			ResourceLocation name = new ResourceLocation("zseeds:gold_zombie");
 			Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
 			mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
 			worldIn.spawnEntity(mob);
@@ -107,7 +80,7 @@ public class ZombieBaseCrop extends BlockCrops {
 	@Override
 	protected Item getSeed()
 	{
-		return ModItems.ZombieBaseSeeds;
+		return ModItems.ZombieGoldSeeds;
 	}
 	
 	@Override
