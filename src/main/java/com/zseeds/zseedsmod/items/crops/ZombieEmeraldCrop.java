@@ -50,7 +50,6 @@ public class ZombieEmeraldCrop extends BlockCrops {
 	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
 		this.updateTick(worldIn, pos, state, random);
 		if(this.getAge(state) == 4) {
-			
 			ResourceLocation name = new ResourceLocation("zseeds:emerald_zombie");
 			Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
 			mob.setPosition(pos.getX(), pos.getY(), pos.getZ());

@@ -49,16 +49,7 @@ public class ZombieRedstoneCrop extends BlockCrops {
 	@Override
 	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
 		this.updateTick(worldIn, pos, state, random);
-		if(this.getAge(state) == 4) {
-			
-			int maxRand = 19;
-			
-			IBlockState down = worldIn.getBlockState(pos.down().down());
-			IBlockState north = worldIn.getBlockState(pos.down().north());
-			IBlockState east = worldIn.getBlockState(pos.down().east());
-			IBlockState west = worldIn.getBlockState(pos.down().west());
-			IBlockState south = worldIn.getBlockState(pos.down().south());
-			
+		if(this.getAge(state) == 4) {			
 			ResourceLocation name = new ResourceLocation("zseeds:redstone_zombie");
 			Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
 			mob.setPosition(pos.getX(), pos.getY(), pos.getZ());

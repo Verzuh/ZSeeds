@@ -59,11 +59,14 @@ public class ZombieBaseCrop extends BlockCrops {
 			IBlockState west = worldIn.getBlockState(pos.down().west());
 			IBlockState south = worldIn.getBlockState(pos.down().south());
 			
+			boolean mutation_block_present = (down.getBlock() == ModBlocks.MutationBlock || north.getBlock() == ModBlocks.MutationBlock || east.getBlock() == ModBlocks.MutationBlock || south.getBlock() == ModBlocks.MutationBlock || west.getBlock() == ModBlocks.MutationBlock);
+			
+			if(mutation_block_present) {
+				maxRand = 14;
+			}
+			
 			if(down.getBlock() == Blocks.IRON_BLOCK || north.getBlock() == Blocks.IRON_BLOCK || east.getBlock() == Blocks.IRON_BLOCK || south.getBlock() == Blocks.IRON_BLOCK || west.getBlock() == Blocks.IRON_BLOCK) {
-				if(down.getBlock() == ModBlocks.MutationBlock || north.getBlock() == ModBlocks.MutationBlock || east.getBlock() == ModBlocks.MutationBlock || south.getBlock() == ModBlocks.MutationBlock || west.getBlock() == ModBlocks.MutationBlock) {
-					maxRand = 14;
-				}
-				if(random.nextInt(maxRand) < 4) {
+				if(random.nextInt(maxRand) < 3) {
 					ResourceLocation name = new ResourceLocation("zseeds:iron_zombie");
 					Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
 					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
@@ -73,10 +76,7 @@ public class ZombieBaseCrop extends BlockCrops {
 				} 
 			} 
 			if(down.getBlock() == Blocks.COAL_BLOCK || north.getBlock() == Blocks.COAL_BLOCK || east.getBlock() == Blocks.COAL_BLOCK || south.getBlock() == Blocks.COAL_BLOCK || west.getBlock() == Blocks.COAL_BLOCK) {
-				if(down.getBlock() == ModBlocks.MutationBlock || north.getBlock() == ModBlocks.MutationBlock || east.getBlock() == ModBlocks.MutationBlock || south.getBlock() == ModBlocks.MutationBlock || west.getBlock() == ModBlocks.MutationBlock) {
-					maxRand = 14;
-				}
-				if(random.nextInt(maxRand) < 4) {
+				if(random.nextInt(maxRand) < 3) {
 					ResourceLocation name = new ResourceLocation("zseeds:coal_zombie");
 					Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
 					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());

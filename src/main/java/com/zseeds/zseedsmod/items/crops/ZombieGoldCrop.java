@@ -59,6 +59,33 @@ public class ZombieGoldCrop extends BlockCrops {
 			IBlockState west = worldIn.getBlockState(pos.down().west());
 			IBlockState south = worldIn.getBlockState(pos.down().south());
 			
+			boolean mutation_block_present = (down.getBlock() == ModBlocks.MutationBlock || north.getBlock() == ModBlocks.MutationBlock || east.getBlock() == ModBlocks.MutationBlock || south.getBlock() == ModBlocks.MutationBlock || west.getBlock() == ModBlocks.MutationBlock);
+			
+			if(mutation_block_present) {
+				maxRand = 14;
+			}
+			
+			if(down.getBlock() == Blocks.EMERALD_BLOCK || north.getBlock() == Blocks.EMERALD_BLOCK || east.getBlock() == Blocks.EMERALD_BLOCK || south.getBlock() == Blocks.EMERALD_BLOCK || west.getBlock() == Blocks.EMERALD_BLOCK) {
+				if(random.nextInt(maxRand) < 1) {
+					ResourceLocation name = new ResourceLocation("zseeds:emerald_zombie");
+					Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
+					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					worldIn.spawnEntity(mob);
+					worldIn.destroyBlock(pos, false);
+					return;
+				} 
+			} 
+			if(down.getBlock() == Blocks.DIAMOND_BLOCK || north.getBlock() == Blocks.DIAMOND_BLOCK || east.getBlock() == Blocks.DIAMOND_BLOCK || south.getBlock() == Blocks.LAPIS_BLOCK || west.getBlock() == Blocks.DIAMOND_BLOCK) {
+				if(random.nextInt(maxRand) < 1) {
+					ResourceLocation name = new ResourceLocation("zseeds:diamond_zombie");
+					Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
+					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
+					worldIn.spawnEntity(mob);
+					worldIn.destroyBlock(pos, false);
+					return;
+				} 
+			}
+			
 			ResourceLocation name = new ResourceLocation("zseeds:gold_zombie");
 			Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
 			mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
