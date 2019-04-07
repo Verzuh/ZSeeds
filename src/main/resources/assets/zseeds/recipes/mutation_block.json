@@ -1,0 +1,27 @@
+{ 
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "AAA",
+    "ASA",
+    "AAA"
+  ],
+  "key":
+  {
+    "A": 
+    {
+        "item": "zseeds:zombie_base_seeds",
+        "data": 0
+    },
+    "S":
+    {
+        "item": "minecraft:soul_sand",
+        "data": 0
+    }
+  },
+  "result":
+  {
+    "item": "zseeds:mutation_block",
+    "data": 0
+  }
+}

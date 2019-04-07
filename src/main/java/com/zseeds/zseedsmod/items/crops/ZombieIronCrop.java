@@ -36,14 +36,14 @@ public class ZombieIronCrop extends BlockCrops {
 
 	protected boolean canSustainBush(IBlockState state)
 	{
-		return state.getBlock() == Blocks.DIRT;
+		return state.getBlock() == Blocks.GRASS;
 	}
 
 	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
 	{
 		IBlockState soil = worldIn.getBlockState(pos.down());
 
-		return (worldIn.canSeeSky(pos) && soil.getBlock() == Blocks.DIRT);
+		return (soil.getBlock() == Blocks.GRASS);
 	}
 	
 	@Override

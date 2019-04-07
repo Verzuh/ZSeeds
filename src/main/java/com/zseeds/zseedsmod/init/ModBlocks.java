@@ -70,22 +70,22 @@ public class ModBlocks {
 	@SubscribeEvent
 	public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
 		event.getRegistry().registerAll(new ItemBlock(MutationBlock).setRegistryName(MutationBlock.getRegistryName()));
-		ModItems.ZombieBaseSeeds = new ZombieBaseSeeds(ModBlocks.ZombieBaseCrop, Blocks.DIRT, "zombie_base_seeds").setCreativeTab(ModItems.tabExampleMod);
+		ModItems.ZombieBaseSeeds = new ZombieBaseSeeds(ModBlocks.ZombieBaseCrop, Blocks.GRASS, "zombie_base_seeds").setCreativeTab(ModItems.tabExampleMod);
 		event.getRegistry().register(ModItems.ZombieBaseSeeds);
-		ModItems.ZombieIronSeeds = new ZombieIronSeeds(ModBlocks.ZombieIronCrop, Blocks.DIRT, "zombie_iron_seeds").setCreativeTab(ModItems.tabExampleMod);
+		ModItems.ZombieIronSeeds = new ZombieIronSeeds(ModBlocks.ZombieIronCrop, Blocks.GRASS, "zombie_iron_seeds").setCreativeTab(ModItems.tabExampleMod);
 		event.getRegistry().register(ModItems.ZombieIronSeeds);
-		ModItems.ZombieCoalSeeds = new ZombieCoalSeeds(ModBlocks.ZombieCoalCrop, Blocks.DIRT, "zombie_coal_seeds").setCreativeTab(ModItems.tabExampleMod);
+		ModItems.ZombieCoalSeeds = new ZombieCoalSeeds(ModBlocks.ZombieCoalCrop, Blocks.GRASS, "zombie_coal_seeds").setCreativeTab(ModItems.tabExampleMod);
 		event.getRegistry().register(ModItems.ZombieCoalSeeds);
-		ModItems.ZombieGoldSeeds = new ZombieGoldSeeds(ModBlocks.ZombieGoldCrop, Blocks.DIRT, "zombie_gold_seeds").setCreativeTab(ModItems.tabExampleMod);
+		ModItems.ZombieGoldSeeds = new ZombieGoldSeeds(ModBlocks.ZombieGoldCrop, Blocks.GRASS, "zombie_gold_seeds").setCreativeTab(ModItems.tabExampleMod);
 		event.getRegistry().register(ModItems.ZombieGoldSeeds);
 	
-		ModItems.ZombieLapisSeeds = new ZombieLapisSeeds(ModBlocks.ZombieLapisCrop, Blocks.DIRT, "zombie_lapis_seeds").setCreativeTab(ModItems.tabExampleMod);
+		ModItems.ZombieLapisSeeds = new ZombieLapisSeeds(ModBlocks.ZombieLapisCrop, Blocks.GRASS, "zombie_lapis_seeds").setCreativeTab(ModItems.tabExampleMod);
 		event.getRegistry().register(ModItems.ZombieLapisSeeds);
-		ModItems.ZombieRedstoneSeeds = new ZombieRedstoneSeeds(ModBlocks.ZombieRedstoneCrop, Blocks.DIRT, "zombie_redstone_seeds").setCreativeTab(ModItems.tabExampleMod);
+		ModItems.ZombieRedstoneSeeds = new ZombieRedstoneSeeds(ModBlocks.ZombieRedstoneCrop, Blocks.GRASS, "zombie_redstone_seeds").setCreativeTab(ModItems.tabExampleMod);
 		event.getRegistry().register(ModItems.ZombieRedstoneSeeds);
-		ModItems.ZombieEmeraldSeeds = new ZombieEmeraldSeeds(ModBlocks.ZombieEmeraldCrop, Blocks.DIRT, "zombie_emerald_seeds").setCreativeTab(ModItems.tabExampleMod);
+		ModItems.ZombieEmeraldSeeds = new ZombieEmeraldSeeds(ModBlocks.ZombieEmeraldCrop, Blocks.GRASS, "zombie_emerald_seeds").setCreativeTab(ModItems.tabExampleMod);
 		event.getRegistry().register(ModItems.ZombieEmeraldSeeds);
-		ModItems.ZombieDiamondSeeds = new ZombieDiamondSeeds(ModBlocks.ZombieDiamondCrop, Blocks.DIRT, "zombie_diamond_seeds").setCreativeTab(ModItems.tabExampleMod);
+		ModItems.ZombieDiamondSeeds = new ZombieDiamondSeeds(ModBlocks.ZombieDiamondCrop, Blocks.GRASS, "zombie_diamond_seeds").setCreativeTab(ModItems.tabExampleMod);
 		event.getRegistry().register(ModItems.ZombieDiamondSeeds);
 	}
 	
