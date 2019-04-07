@@ -3,6 +3,8 @@ package com.zseeds.zseedsmod.init;
 import com.zseeds.zseedsmod.blocks.MutationBlock;
 import com.zseeds.zseedsmod.items.crops.ZombieDefaultCrop;
 import com.zseeds.zseedsmod.items.crops.ZombieIronCrop;
+import com.zseeds.zseedsmod.items.crops.ZombieCoalCrop;
+import com.zseeds.zseedsmod.items.seeds.ZombieCoalSeeds;
 import com.zseeds.zseedsmod.items.seeds.ZombieDefaultSeeds;
 import com.zseeds.zseedsmod.items.seeds.ZombieIronSeeds;
 import com.zseeds.zseedsmod.Reference;
@@ -26,21 +28,23 @@ public class ModBlocks {
 	public static Block MutationBlock;
 	static Block exampleCrop;
 	static Block ZombieIronCrop;
+	static Block ZombieCoalCrop;
 	
 	public static void initSeeds() {
 		
 	}
 	
 	public static void init() {
-		MutationBlock = new MutationBlock("mutation_block", Material.GROUND).setCreativeTab(ModItems.tabExampleMod);
+		MutationBlock = new MutationBlock("mutation_block", Material.GROUND).setHardness(1.0F).setCreativeTab(ModItems.tabExampleMod);
 		MutationBlock.setHarvestLevel("pickaxe", 2);
 		exampleCrop = new ZombieDefaultCrop("example_crop");
 		ZombieIronCrop = new ZombieIronCrop("zombie_iron_crop");
+		ZombieCoalCrop = new ZombieCoalCrop("zombie_coal_crop");
 	}
 	
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
-		event.getRegistry().registerAll(MutationBlock, exampleCrop, ZombieIronCrop);
+		event.getRegistry().registerAll(MutationBlock, exampleCrop, ZombieIronCrop, ZombieCoalCrop);
 	}
 	
 	@SubscribeEvent
@@ -50,6 +54,8 @@ public class ModBlocks {
 		event.getRegistry().register(ModItems.defaultSeeds);
 		ModItems.ZombieIronSeeds = new ZombieIronSeeds(ModBlocks.ZombieIronCrop, Blocks.DIRT, "zombie_iron_seeds").setCreativeTab(ModItems.tabExampleMod);
 		event.getRegistry().register(ModItems.ZombieIronSeeds);
+		ModItems.ZombieCoalSeeds = new ZombieCoalSeeds(ModBlocks.ZombieCoalCrop, Blocks.DIRT, "zombie_coal_seeds").setCreativeTab(ModItems.tabExampleMod);
+		event.getRegistry().register(ModItems.ZombieCoalSeeds);
 	}
 	
 	@SubscribeEvent
