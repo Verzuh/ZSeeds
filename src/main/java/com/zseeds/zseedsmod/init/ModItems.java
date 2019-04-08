@@ -17,7 +17,19 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Mod.EventBusSubscriber(modid=Reference.MODID)
 public class ModItems {
 	
+	//Tier 1
 	public static Item ZombieBaseSeeds;
+	
+	//Tier 2
+	public static Item ZombieClaySeeds;
+	public static Item ZombieGravelSeeds;
+	public static Item ZombieSandSeeds;
+	public static Item ZombieDirtSeeds;
+	public static Item ZombieStoneSeeds;
+	public static Item ZombieOakSeeds;
+	public static Item ZombieClothSeeds;
+	public static Item ZombieSnowSeeds;
+	
 	public static Item ZombieIronSeeds;
 	public static Item ZombieCoalSeeds;
 	public static Item ZombieGoldSeeds;
@@ -46,7 +58,19 @@ public class ModItems {
 	
 	@SubscribeEvent
 	public static void registerRenders(ModelRegistryEvent event) {
+		//Tier 1
 		registerRender(ZombieBaseSeeds);
+		
+		//Tier 2
+		registerRender(ZombieClaySeeds);
+		registerRender(ZombieGravelSeeds);
+		registerRender(ZombieSandSeeds);
+		registerRender(ZombieDirtSeeds);
+		registerRender(ZombieStoneSeeds);
+		registerRender(ZombieOakSeeds);
+		registerRender(ZombieClothSeeds);
+		registerRender(ZombieSnowSeeds);
+		
 		registerRender(ZombieIronSeeds);
 		registerRender(ZombieCoalSeeds);
 		registerRender(ZombieGoldSeeds);

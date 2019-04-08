@@ -1,22 +1,9 @@
 package com.zseeds.zseedsmod.init;
 
 import com.zseeds.zseedsmod.blocks.MutationBlock;
-import com.zseeds.zseedsmod.items.crops.ZombieBaseCrop;
-import com.zseeds.zseedsmod.items.crops.ZombieIronCrop;
-import com.zseeds.zseedsmod.items.crops.ZombieCoalCrop;
-import com.zseeds.zseedsmod.items.crops.ZombieGoldCrop;
-import com.zseeds.zseedsmod.items.crops.ZombieLapisCrop;
-import com.zseeds.zseedsmod.items.crops.ZombieRedstoneCrop;
-import com.zseeds.zseedsmod.items.crops.ZombieEmeraldCrop;
-import com.zseeds.zseedsmod.items.crops.ZombieDiamondCrop;
-import com.zseeds.zseedsmod.items.seeds.ZombieCoalSeeds;
-import com.zseeds.zseedsmod.items.seeds.ZombieBaseSeeds;
-import com.zseeds.zseedsmod.items.seeds.ZombieIronSeeds;
-import com.zseeds.zseedsmod.items.seeds.ZombieGoldSeeds;
-import com.zseeds.zseedsmod.items.seeds.ZombieLapisSeeds;
-import com.zseeds.zseedsmod.items.seeds.ZombieRedstoneSeeds;
-import com.zseeds.zseedsmod.items.seeds.ZombieEmeraldSeeds;
-import com.zseeds.zseedsmod.items.seeds.ZombieDiamondSeeds;
+import com.zseeds.zseedsmod.items.crops.*;
+import com.zseeds.zseedsmod.items.seeds.*;
+
 import com.zseeds.zseedsmod.Reference;
 
 import net.minecraft.block.Block;
@@ -36,7 +23,20 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ModBlocks {
 
 	public static Block MutationBlock;
+	
+	//Tier 1
 	static Block ZombieBaseCrop;
+	
+	//Tier 2
+	static Block ZombieClayCrop;
+	static Block ZombieGravelCrop;
+	static Block ZombieSandCrop;
+	static Block ZombieDirtCrop;
+	static Block ZombieStoneCrop;
+	static Block ZombieOakCrop;
+	static Block ZombieClothCrop;
+	static Block ZombieSnowCrop;
+	
 	static Block ZombieIronCrop;
 	static Block ZombieCoalCrop;
 	static Block ZombieGoldCrop;
@@ -52,7 +52,20 @@ public class ModBlocks {
 	public static void init() {
 		MutationBlock = new MutationBlock("mutation_block", Material.GROUND).setHardness(1.0F).setCreativeTab(ModItems.tabExampleMod);
 		MutationBlock.setHarvestLevel("pickaxe", 2);
+		
+		//Tier 1
 		ZombieBaseCrop = new ZombieBaseCrop("zombie_base_crop");
+		
+		//Tier 2
+		ZombieClayCrop = new ZombieClayCrop("zombie_clay_crop");
+		ZombieGravelCrop = new ZombieGravelCrop("zombie_gravel_crop");
+		ZombieSandCrop = new ZombieSandCrop("zombie_sand_crop");
+		ZombieDirtCrop = new ZombieDirtCrop("zombie_dirt_crop");
+		ZombieStoneCrop = new ZombieStoneCrop("zombie_stone_crop");
+		ZombieOakCrop = new ZombieOakCrop("zombie_oak_crop");
+		ZombieClothCrop = new ZombieClothCrop("zombie_cloth_crop");
+		ZombieSnowCrop = new ZombieSnowCrop("zombie_snow_crop");
+		
 		ZombieIronCrop = new ZombieIronCrop("zombie_iron_crop");
 		ZombieCoalCrop = new ZombieCoalCrop("zombie_coal_crop");
 		ZombieGoldCrop = new ZombieGoldCrop("zombie_gold_crop");
@@ -64,13 +77,35 @@ public class ModBlocks {
 	
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
-		event.getRegistry().registerAll(MutationBlock, ZombieBaseCrop, ZombieIronCrop, ZombieCoalCrop, ZombieGoldCrop, ZombieLapisCrop, ZombieRedstoneCrop, ZombieEmeraldCrop, ZombieDiamondCrop);
+		event.getRegistry().registerAll(MutationBlock, ZombieBaseCrop, ZombieClayCrop, ZombieGravelCrop, ZombieSandCrop, ZombieDirtCrop, ZombieStoneCrop, ZombieOakCrop, ZombieClothCrop, ZombieSnowCrop, ZombieIronCrop, ZombieCoalCrop, ZombieGoldCrop, ZombieLapisCrop, ZombieRedstoneCrop, ZombieEmeraldCrop, ZombieDiamondCrop);
 	}
 	
 	@SubscribeEvent
 	public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
 		event.getRegistry().registerAll(new ItemBlock(MutationBlock).setRegistryName(MutationBlock.getRegistryName()));
+		
+		//Tier 1
 		ModItems.ZombieBaseSeeds = new ZombieBaseSeeds(ModBlocks.ZombieBaseCrop, Blocks.GRASS, "zombie_base_seeds").setCreativeTab(ModItems.tabExampleMod);
+		event.getRegistry().register(ModItems.ZombieBaseSeeds);
+		
+		//Tier 2
+		ModItems.ZombieClaySeeds = new ZombieClaySeeds(ModBlocks.ZombieClayCrop, Blocks.GRASS, "zombie_clay_seeds").setCreativeTab(ModItems.tabExampleMod);
+		event.getRegistry().register(ModItems.ZombieClaySeeds);
+		ModItems.ZombieGravelSeeds = new ZombieGravelSeeds(ModBlocks.ZombieGravelCrop, Blocks.GRASS, "zombie_gravel_seeds").setCreativeTab(ModItems.tabExampleMod);
+		event.getRegistry().register(ModItems.ZombieGravelSeeds);
+		ModItems.ZombieSandSeeds = new ZombieSandSeeds(ModBlocks.ZombieSandCrop, Blocks.GRASS, "zombie_sand_seeds").setCreativeTab(ModItems.tabExampleMod);
+		event.getRegistry().register(ModItems.ZombieSandSeeds);
+		ModItems.ZombieDirtSeeds = new ZombieDirtSeeds(ModBlocks.ZombieDirtCrop, Blocks.GRASS, "zombie_dirt_seeds").setCreativeTab(ModItems.tabExampleMod);
+		event.getRegistry().register(ModItems.ZombieDirtSeeds);
+		ModItems.ZombieStoneSeeds = new ZombieStoneSeeds(ModBlocks.ZombieStoneCrop, Blocks.GRASS, "zombie_stone_seeds").setCreativeTab(ModItems.tabExampleMod);
+		event.getRegistry().register(ModItems.ZombieStoneSeeds);
+		ModItems.ZombieOakSeeds = new ZombieOakSeeds(ModBlocks.ZombieOakCrop, Blocks.GRASS, "zombie_oak_seeds").setCreativeTab(ModItems.tabExampleMod);
+		event.getRegistry().register(ModItems.ZombieOakSeeds);
+		ModItems.ZombieClothSeeds = new ZombieClothSeeds(ModBlocks.ZombieClothCrop, Blocks.GRASS, "zombie_cloth_seeds").setCreativeTab(ModItems.tabExampleMod);
+		event.getRegistry().register(ModItems.ZombieClothSeeds);
+		ModItems.ZombieSnowSeeds = new ZombieSnowSeeds(ModBlocks.ZombieSnowCrop, Blocks.GRASS, "zombie_snow_seeds").setCreativeTab(ModItems.tabExampleMod);
+		event.getRegistry().register(ModItems.ZombieSnowSeeds);
+		
 		event.getRegistry().register(ModItems.ZombieBaseSeeds);
 		ModItems.ZombieIronSeeds = new ZombieIronSeeds(ModBlocks.ZombieIronCrop, Blocks.GRASS, "zombie_iron_seeds").setCreativeTab(ModItems.tabExampleMod);
 		event.getRegistry().register(ModItems.ZombieIronSeeds);
@@ -78,7 +113,6 @@ public class ModBlocks {
 		event.getRegistry().register(ModItems.ZombieCoalSeeds);
 		ModItems.ZombieGoldSeeds = new ZombieGoldSeeds(ModBlocks.ZombieGoldCrop, Blocks.GRASS, "zombie_gold_seeds").setCreativeTab(ModItems.tabExampleMod);
 		event.getRegistry().register(ModItems.ZombieGoldSeeds);
-	
 		ModItems.ZombieLapisSeeds = new ZombieLapisSeeds(ModBlocks.ZombieLapisCrop, Blocks.GRASS, "zombie_lapis_seeds").setCreativeTab(ModItems.tabExampleMod);
 		event.getRegistry().register(ModItems.ZombieLapisSeeds);
 		ModItems.ZombieRedstoneSeeds = new ZombieRedstoneSeeds(ModBlocks.ZombieRedstoneCrop, Blocks.GRASS, "zombie_redstone_seeds").setCreativeTab(ModItems.tabExampleMod);

@@ -3,6 +3,16 @@ tile.mutation_block.name=Zombie Mutation Booster
 itemGroup.tabExampleMod=ZSeeds
 
 item.zombie_base_seeds.name=Zombie Seeds
+
+item.zombie_clay_seeds.name=Clay Zombie Seeds
+item.zombie_gravel_seeds.name=Gravel Zombie Seeds
+item.zombie_sand_seeds.name=Sand Zombie Seeds
+item.zombie_dirt_seeds.name=Dirt Zombie Seeds
+item.zombie_stone_seeds.name=Stone Zombie Seeds
+item.zombie_oak_seeds.name=Oak Zombie Seeds
+item.zombie_cloth_seeds.name=Cloth Zombie Seeds
+item.zombie_snow_seeds.name=Snow Zombie Seeds
+
 item.zombie_iron_seeds.name=Iron Zombie Seeds
 item.zombie_coal_seeds.name=Coal Zombie Seeds
 item.zombie_gold_seeds.name=Gold Zombie Seeds
@@ -12,6 +22,16 @@ item.zombie_emerald_seeds.name=Emerald Zombie Seeds
 item.zombie_diamond_seeds.name=Diamond Zombie Seeds
 
 entity.BaseZombie.name=Zombie
+
+entity.ClayZombie.name=Clay Zombie
+entity.GravelZombie.name=Gravel Zombie
+entity.SandZombie.name=Sand Zombie
+entity.DirtZombie.name=Dirt Zombie
+entity.StoneZombie.name=Stone Zombie
+entity.OakZombie.name=Oak Zombie
+entity.ClothZombie.name=Cloth Zombie
+entity.SnowZombie.name=Snow Zombie
+
 entity.IronZombie.name=Iron Zombie
 entity.CoalZombie.name=Coal Zombie
 entity.GoldZombie.name=Gold Zombie
