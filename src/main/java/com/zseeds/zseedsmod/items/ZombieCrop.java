@@ -32,15 +32,15 @@ public class ZombieCrop extends BlockCrops {
 	private final ArrayList<ResourceLocation> zombies = new ArrayList<ResourceLocation>();
 	private final ArrayList<Integer> chances = new ArrayList<Integer>();
 	private final ResourceLocation curr_zombie;
-	private final Item seed;
+	private final String seedName;
 	
-	public ZombieCrop(String name, ResourceLocation rl, Item s) {
+	public ZombieCrop(String name, ResourceLocation rl, String sn) {
 		super();
 		this.setRegistryName(name);
 		this.setUnlocalizedName(name);
 		this.setSoundType(SoundType.STONE);
 		this.curr_zombie = rl;
-		seed = s;
+		seedName = sn;
 	}
 	
 	@Override
@@ -117,7 +117,8 @@ public class ZombieCrop extends BlockCrops {
 	@Override
 	protected Item getSeed()
 	{
-		return seed;
+		//return ModItems.ZombieBaseSeeds;
+		return Item.getByNameOrId("zseeds:" + seedName);
 	}
 	
 	@Override
