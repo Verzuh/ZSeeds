@@ -5,8 +5,11 @@ import com.zseeds.zseedsmod.entity.render.*;
 import com.zseeds.zseedsmod.Reference;
 import com.zseeds.zseedsmod.ZSeeds;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
+import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -18,7 +21,7 @@ public class ModEntities {
 
     public static void init() {
         // Every entity in our mod has an ID (local to this mod)
-        int id = 1;
+        int id = 1;   
         
         //Tier 1
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "base_zombie"), EntityZombieBase.class, "BaseZombie", id++, ZSeeds.instance, 64, 3, true, 0x996600, 0x00ff00);

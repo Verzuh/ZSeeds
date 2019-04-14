@@ -1,10 +1,12 @@
-package com.zseeds.zseedsmod.items.crops;
+package com.zseeds.zseedsmod.items;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import com.zseeds.zseedsmod.init.ModBlocks;
 import com.zseeds.zseedsmod.init.ModItems;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
@@ -22,16 +24,23 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class ZombieBaseCrop extends BlockCrops {
+public class ZombieCrop extends BlockCrops {
 
 	public static final PropertyInteger CROP_AGE = PropertyInteger.create("age", 0, 4);
 	private static final AxisAlignedBB[] CROP_AABB = new AxisAlignedBB[] {new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.25D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.35D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.40D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D)};
-
-	public ZombieBaseCrop(String name) {
+	private final ArrayList<Block> mutationBlocks = new ArrayList<Block>();
+	private final ArrayList<ResourceLocation> zombies = new ArrayList<ResourceLocation>();
+	private final ArrayList<Integer> chances = new ArrayList<Integer>();
+	private final ResourceLocation curr_zombie;
+	private final Item seed;
+	
+	public ZombieCrop(String name, ResourceLocation rl, Item s) {
 		super();
 		this.setRegistryName(name);
 		this.setUnlocalizedName(name);
 		this.setSoundType(SoundType.STONE);
+		this.curr_zombie = rl;
+		seed = s;
 	}
 	
 	@Override
@@ -55,50 +64,46 @@ public class ZombieBaseCrop extends BlockCrops {
 	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
 		this.updateTick(worldIn, pos, state, random);
 		if(this.getAge(state) == 4) {
+			for(int i = 0; i < mutationBlocks.size(); i++) {
+				int maxRand = chances.get(i);
+				
+				IBlockState down = worldIn.getBlockState(pos.down().down());
+				IBlockState north = worldIn.getBlockState(pos.down().north());
+				IBlockState east = worldIn.getBlockState(pos.down().east());
+				IBlockState west = worldIn.getBlockState(pos.down().west());
+				IBlockState south = worldIn.getBlockState(pos.down().south());
+				
+				boolean mutation_block_present = (down.getBlock() == ModBlocks.MutationBlock || north.getBlock() == ModBlocks.MutationBlock || east.getBlock() == ModBlocks.MutationBlock || south.getBlock() == ModBlocks.MutationBlock || west.getBlock() == ModBlocks.MutationBlock);
+				
+				if(mutation_block_present) {
+					maxRand = chances.get(i) - 5;
+				}
 			
-			int maxRand = 19;
-			
-			IBlockState down = worldIn.getBlockState(pos.down().down());
-			IBlockState north = worldIn.getBlockState(pos.down().north());
-			IBlockState east = worldIn.getBlockState(pos.down().east());
-			IBlockState west = worldIn.getBlockState(pos.down().west());
-			IBlockState south = worldIn.getBlockState(pos.down().south());
-			
-			boolean mutation_block_present = (down.getBlock() == ModBlocks.MutationBlock || north.getBlock() == ModBlocks.MutationBlock || east.getBlock() == ModBlocks.MutationBlock || south.getBlock() == ModBlocks.MutationBlock || west.getBlock() == ModBlocks.MutationBlock);
-			
-			if(mutation_block_present) {
-				maxRand = 14;
-			}
-			
-			if(down.getBlock() == Blocks.IRON_BLOCK || north.getBlock() == Blocks.IRON_BLOCK || east.getBlock() == Blocks.IRON_BLOCK || south.getBlock() == Blocks.IRON_BLOCK || west.getBlock() == Blocks.IRON_BLOCK) {
-				if(random.nextInt(maxRand) < 3) {
-					ResourceLocation name = new ResourceLocation("zseeds:iron_zombie");
-					Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
-					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
-					worldIn.spawnEntity(mob);
-					worldIn.destroyBlock(pos, false);
-					return;
-				} 
-			} 
-			if(down.getBlock() == Blocks.COAL_BLOCK || north.getBlock() == Blocks.COAL_BLOCK || east.getBlock() == Blocks.COAL_BLOCK || south.getBlock() == Blocks.COAL_BLOCK || west.getBlock() == Blocks.COAL_BLOCK) {
-				if(random.nextInt(maxRand) < 3) {
-					ResourceLocation name = new ResourceLocation("zseeds:coal_zombie");
-					Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
-					mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
-					worldIn.spawnEntity(mob);
-					worldIn.destroyBlock(pos, false);
-					return;
+				Block b = mutationBlocks.get(i);
+				if(down.getBlock() == b || north.getBlock() == b || east.getBlock() == b || south.getBlock() == b || west.getBlock() == b) {
+					if(random.nextInt(maxRand) < 3) {
+						Entity mob = EntityList.createEntityByIDFromName(zombies.get(i), worldIn);
+						mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
+						worldIn.spawnEntity(mob);
+						worldIn.destroyBlock(pos, false);
+						return;
+					} 
 				} 
 			}
 			
-			ResourceLocation name = new ResourceLocation("zseeds:base_zombie");
-			Entity mob = EntityList.createEntityByIDFromName(name, worldIn);
+			Entity mob = EntityList.createEntityByIDFromName(curr_zombie, worldIn);
 			mob.setPosition(pos.getX(), pos.getY(), pos.getZ());
 			worldIn.spawnEntity(mob);
 			worldIn.destroyBlock(pos, false);
 		}
 	}
-
+	
+	public void addMutation(Block block, ResourceLocation zombie, int chance) {
+		mutationBlocks.add(block);
+		zombies.add(zombie);
+		chances.add(chance);
+	}
+	
 	protected PropertyInteger getAgeProperty()
 	{
 		return CROP_AGE;
@@ -112,7 +117,7 @@ public class ZombieBaseCrop extends BlockCrops {
 	@Override
 	protected Item getSeed()
 	{
-		return ModItems.ZombieBaseSeeds;
+		return seed;
 	}
 	
 	@Override
