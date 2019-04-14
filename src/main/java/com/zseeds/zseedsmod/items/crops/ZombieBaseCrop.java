@@ -36,7 +36,7 @@ public class ZombieBaseCrop extends BlockCrops {
 	
 	@Override
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-		return false;
+		return true;
 	}
 
 	protected boolean canSustainBush(IBlockState state)

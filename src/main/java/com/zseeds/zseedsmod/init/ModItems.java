@@ -1,7 +1,7 @@
 package com.zseeds.zseedsmod.init;
 
-import com.zseeds.zseedsmod.items.seeds.ZombieBaseSeeds;
 import com.zseeds.zseedsmod.Reference;
+import com.zseeds.zseedsmod.items.ZombieSeeds;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
