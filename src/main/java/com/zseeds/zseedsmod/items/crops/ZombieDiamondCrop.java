@@ -22,33 +22,10 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class ZombieDiamondCrop extends BlockCrops {
-
-	public static final PropertyInteger CROP_AGE = PropertyInteger.create("age", 0, 4);
-	private static final AxisAlignedBB[] CROP_AABB = new AxisAlignedBB[] {new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.25D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.35D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.40D, 1.0D), new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D)};
+public class ZombieDiamondCrop extends ZombieBaseCrop {
 
 	public ZombieDiamondCrop(String name) {
-		super();
-		this.setRegistryName(name);
-		this.setUnlocalizedName(name);
-		this.setSoundType(SoundType.STONE);
-	}
-	
-	@Override
-	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-		return false;
-	}
-
-	protected boolean canSustainBush(IBlockState state)
-	{
-		return state.getBlock() == Blocks.GRASS;
-	}
-
-	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
-	{
-		IBlockState soil = worldIn.getBlockState(pos.down());
-
-		return (soil.getBlock() == Blocks.GRASS);
+		super(name);
 	}
 	
 	@Override
@@ -62,62 +39,10 @@ public class ZombieDiamondCrop extends BlockCrops {
 			worldIn.destroyBlock(pos, false);
 		}
 	}
-
-	protected PropertyInteger getAgeProperty()
-	{
-		return CROP_AGE;
-	}
-
-	public int getMaxAge()
-	{
-		return 4;
-	}
-
+	
 	@Override
 	protected Item getSeed()
 	{
 		return ModItems.ZombieDiamondSeeds;
-	}
-	
-	@Override
-	protected Item getCrop() {
-		return null;
-	}
-
-	@Override
-	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
-	{
-		if (!worldIn.isAreaLoaded(pos, 1)) return;
-		if (rand.nextInt(10) == 0)
-		{
-			this.checkAndDropBlock(worldIn, pos, state);
-		}
-		else
-		{
-			super.updateTick(worldIn, pos, state, rand);
-			
-			int i = this.getAge(state);
-
-            if (i < this.getMaxAge())
-            {
-                float f = getGrowthChance(this, worldIn, pos);
-
-                if(net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt((int)(25.0F / f) + 1) == 0))
-                {
-                    worldIn.setBlockState(pos, this.withAge(i + 1), 2);
-                    net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state, worldIn.getBlockState(pos));
-                }
-            }
-		}
-	}
-
-	protected BlockStateContainer createBlockState()
-	{
-		return new BlockStateContainer(this, new IProperty[] {CROP_AGE});
-	}
-
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
-	{
-		return CROP_AABB[((Integer)state.getValue(this.getAgeProperty())).intValue()];
 	}
 }
