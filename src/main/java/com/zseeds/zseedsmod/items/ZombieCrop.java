@@ -82,7 +82,7 @@ public class ZombieCrop extends BlockCrops {
 				int maxRand = chances.get(i);
 				
 				if(mutate) {
-					maxRand = chances.get(i) - 5;
+					maxRand = (int) (chances.get(i) - (chances.get(i) * 0.2));
 				}
 			
 				Block b = mutationBlocks.get(i);
