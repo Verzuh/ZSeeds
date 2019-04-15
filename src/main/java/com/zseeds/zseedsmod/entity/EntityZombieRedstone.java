@@ -8,9 +8,10 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class EntityZombieRedstone extends EntityZombie {
+public class EntityZombieRedstone extends EntityZombieBase {
 	public static final ResourceLocation LOOT = new ResourceLocation(Reference.MODID, "entities/redstone_zombie");
-
+	private ResourceLocation mobTexture = new ResourceLocation("zseeds:textures/entity/redstone_zombie.png");
+	
     public EntityZombieRedstone(World worldIn) {
         super(worldIn);
     }
@@ -24,5 +25,9 @@ public class EntityZombieRedstone extends EntityZombie {
     @Nullable
     protected ResourceLocation getLootTable() {
         return LOOT;
+    }
+    
+    public ResourceLocation getTexture() {
+    	return mobTexture;
     }
 }

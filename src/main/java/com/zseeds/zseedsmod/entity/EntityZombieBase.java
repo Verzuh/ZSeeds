@@ -30,8 +30,4 @@ public class EntityZombieBase extends EntityZombie {
     public ResourceLocation getTexture() {
     	return mobTexture;
     }
-    
-    public void setTexture(ResourceLocation rl) {
-    	mobTexture = rl;
-    }
 }

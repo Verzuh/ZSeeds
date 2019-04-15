@@ -1,4 +1,4 @@
-package com.zseeds.zseedsmod.entity.render;
+package com.zseeds.zseedsmod.entity;
 
 import net.minecraft.client.model.ModelZombie;
 import net.minecraft.client.renderer.entity.Render;
@@ -11,14 +11,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 
-import com.zseeds.zseedsmod.entity.EntityZombieBase;
-
 @SideOnly(Side.CLIENT)
-public class RenderZombieBase extends RenderLiving<EntityZombieBase> {
+public class RenderEntityZombie extends RenderLiving<EntityZombieBase> {
 
     public static final Factory FACTORY = new Factory();
     
-    public RenderZombieBase(RenderManager rendermanagerIn) {
+    public RenderEntityZombie(RenderManager rendermanagerIn) {
         // We use the vanilla zombie model here and we simply
         // retexture it. Of course you can make your own model
         super(rendermanagerIn, new ModelZombie(), 0.5F);
@@ -35,7 +33,7 @@ public class RenderZombieBase extends RenderLiving<EntityZombieBase> {
 
         @Override
         public Render<? super EntityZombieBase> createRenderFor(RenderManager manager) {
-            return new RenderZombieBase(manager);
+            return new RenderEntityZombie(manager);
         }
     }
 }
