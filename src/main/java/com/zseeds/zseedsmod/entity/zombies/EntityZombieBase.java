@@ -20,7 +20,7 @@ public class EntityZombieBase extends EntityZombie {
     protected void entityInit() {
         super.entityInit();
     }
-
+    
     @Override
     @Nullable
     protected ResourceLocation getLootTable() {
