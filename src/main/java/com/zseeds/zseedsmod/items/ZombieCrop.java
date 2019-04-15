@@ -69,9 +69,14 @@ public class ZombieCrop extends BlockCrops {
 			IBlockState east = worldIn.getBlockState(pos.down().east());
 			IBlockState west = worldIn.getBlockState(pos.down().west());
 			IBlockState south = worldIn.getBlockState(pos.down().south());
+			IBlockState northeast = worldIn.getBlockState(pos.down().north().east());
+			IBlockState northwest = worldIn.getBlockState(pos.down().north().west());
+			IBlockState southeast = worldIn.getBlockState(pos.down().south().east());
+			IBlockState southwest = worldIn.getBlockState(pos.down().south().west());
 			
 			Block m = ModBlocks.MutationBlock;
-			boolean mutate = (north.getBlock() == m || east.getBlock() == m || south.getBlock() == m || west.getBlock() == m);
+			boolean mutate = (north.getBlock() == m || east.getBlock() == m || south.getBlock() == m || west.getBlock() == m 
+					|| northeast.getBlock() == m || northwest.getBlock() == m || southeast.getBlock() == m || southwest.getBlock() == m);
 			
 			for(int i = 0; i < mutationBlocks.size(); i++) {
 				int maxRand = chances.get(i);
@@ -81,7 +86,8 @@ public class ZombieCrop extends BlockCrops {
 				}
 			
 				Block b = mutationBlocks.get(i);
-				if(north.getBlock() == b || east.getBlock() == b || south.getBlock() == b || west.getBlock() == b) {
+				if(north.getBlock() == b || east.getBlock() == b || south.getBlock() == b || west.getBlock() == b
+						|| northeast.getBlock() == b || northwest.getBlock() == b || southeast.getBlock() == b || southwest.getBlock() == b) {
 					if(random.nextInt(maxRand) < 3) {
 						Entity mob = EntityList.createEntityByIDFromName(zombies.get(i), worldIn);
 						mob.setPosition(pos.getX(), pos.getY(), pos.getZ());

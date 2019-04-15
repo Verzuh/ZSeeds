@@ -53,8 +53,14 @@ public class ModBlocks {
 		
 		//Tier 1
 		ZombieBaseCrop = new ZombieCrop("zombie_base_crop", new ResourceLocation("zseeds:base_zombie"), "zombie_base_seeds");
-		ZombieBaseCrop.addMutation(Blocks.IRON_BLOCK, new ResourceLocation("zseeds:iron_zombie"), 19);
-		ZombieBaseCrop.addMutation(Blocks.COAL_BLOCK, new ResourceLocation("zseeds:coal_zombie"), 19);
+		ZombieBaseCrop.addMutation(Blocks.CLAY, new ResourceLocation("zseeds:clay_zombie"), 19);
+		ZombieBaseCrop.addMutation(Blocks.GRAVEL, new ResourceLocation("zseeds:gravel_zombie"), 19);
+		ZombieBaseCrop.addMutation(Blocks.SAND, new ResourceLocation("zseeds:sand_zombie"), 19);
+		ZombieBaseCrop.addMutation(Blocks.DIRT, new ResourceLocation("zseeds:dirt_zombie"), 19);
+		ZombieBaseCrop.addMutation(Blocks.STONE, new ResourceLocation("zseeds:stone_zombie"), 19);
+		ZombieBaseCrop.addMutation(Blocks.LOG, new ResourceLocation("zseeds:oak_zombie"), 19);
+		ZombieBaseCrop.addMutation(Blocks.WOOL, new ResourceLocation("zseeds:cloth_zombie"), 19);
+		ZombieBaseCrop.addMutation(Blocks.SNOW, new ResourceLocation("zseeds:snow_zombie"), 19);
 		
 		//Tier 2
 		ZombieClayCrop = new ZombieCrop("zombie_clay_crop", new ResourceLocation("zseeds:clay_zombie"), "zombie_clay_seeds");
