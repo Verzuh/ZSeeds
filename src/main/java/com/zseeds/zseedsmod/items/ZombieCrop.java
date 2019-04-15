@@ -74,6 +74,22 @@ public class ZombieCrop extends BlockCrops {
 			IBlockState southeast = worldIn.getBlockState(pos.down().south().east());
 			IBlockState southwest = worldIn.getBlockState(pos.down().south().west());
 			
+			double x = pos.getX();
+			double y = pos.getY();
+			double z = pos.getZ();
+			
+			if(x >= 0) {
+				x = x - 0.5;
+			} else {
+				x = x + 0.5;
+			}
+			
+			if(z >= 0) {
+				z = z - 0.5;
+			} else {
+				z = z + 0.5;
+			}
+			
 			Block m = ModBlocks.MutationBlock;
 			boolean mutate = (north.getBlock() == m || east.getBlock() == m || south.getBlock() == m || west.getBlock() == m 
 					|| northeast.getBlock() == m || northwest.getBlock() == m || southeast.getBlock() == m || southwest.getBlock() == m);
@@ -90,7 +106,7 @@ public class ZombieCrop extends BlockCrops {
 						|| northeast.getBlock() == b || northwest.getBlock() == b || southeast.getBlock() == b || southwest.getBlock() == b) {
 					if(random.nextInt(maxRand) < 3) {
 						Entity mob = EntityList.createEntityByIDFromName(zombies.get(i), worldIn);
-						mob.setPosition(pos.getX() - 0.5, pos.getY(), pos.getZ() - 0.5);
+						mob.setPosition(x, y, z);
 						worldIn.spawnEntity(mob);
 						worldIn.destroyBlock(pos, false);
 						return;
@@ -99,7 +115,7 @@ public class ZombieCrop extends BlockCrops {
 			}
 			
 			Entity mob = EntityList.createEntityByIDFromName(curr_zombie, worldIn);
-			mob.setPosition(pos.getX() - 0.5, pos.getY(), pos.getZ() - 0.5);
+			mob.setPosition(x, y, z);
 			worldIn.spawnEntity(mob);
 			worldIn.destroyBlock(pos, false);
 		}
