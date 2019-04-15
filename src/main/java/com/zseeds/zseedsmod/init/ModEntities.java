@@ -1,6 +1,7 @@
 package com.zseeds.zseedsmod.init;
 
-import com.zseeds.zseedsmod.entity.*;
+import com.zseeds.zseedsmod.entity.RenderEntityZombie;
+import com.zseeds.zseedsmod.entity.zombies.*;
 import com.zseeds.zseedsmod.Reference;
 import com.zseeds.zseedsmod.ZSeeds;
 

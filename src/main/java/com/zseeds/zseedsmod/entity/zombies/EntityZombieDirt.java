@@ -1,4 +1,4 @@
-package com.zseeds.zseedsmod.entity;
+package com.zseeds.zseedsmod.entity.zombies;
 
 import javax.annotation.Nullable;
 
@@ -10,24 +10,15 @@ import net.minecraft.world.World;
 
 public class EntityZombieDirt extends EntityZombieBase {
 	public static final ResourceLocation LOOT = new ResourceLocation(Reference.MODID, "entities/dirt_zombie");
-	private ResourceLocation mobTexture = new ResourceLocation("zseeds:textures/entity/dirt_zombie.png");
 	
     public EntityZombieDirt(World worldIn) {
         super(worldIn);
+        mobTexture = new ResourceLocation("zseeds:textures/entity/dirt_zombie.png");
     }
-    
-    @Override
-    protected void entityInit() {
-        super.entityInit();
-    }
-
+ 
     @Override
     @Nullable
     protected ResourceLocation getLootTable() {
         return LOOT;
-    }
-    
-    public ResourceLocation getTexture() {
-    	return mobTexture;
     }
 }

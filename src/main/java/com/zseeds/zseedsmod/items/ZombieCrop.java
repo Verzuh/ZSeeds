@@ -64,23 +64,24 @@ public class ZombieCrop extends BlockCrops {
 	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
 		this.updateTick(worldIn, pos, state, random);
 		if(this.getAge(state) == 4) {
+			
+			IBlockState north = worldIn.getBlockState(pos.down().north());
+			IBlockState east = worldIn.getBlockState(pos.down().east());
+			IBlockState west = worldIn.getBlockState(pos.down().west());
+			IBlockState south = worldIn.getBlockState(pos.down().south());
+			
+			Block m = ModBlocks.MutationBlock;
+			boolean mutate = (north.getBlock() == m || east.getBlock() == m || south.getBlock() == m || west.getBlock() == m);
+			
 			for(int i = 0; i < mutationBlocks.size(); i++) {
 				int maxRand = chances.get(i);
 				
-				IBlockState down = worldIn.getBlockState(pos.down().down());
-				IBlockState north = worldIn.getBlockState(pos.down().north());
-				IBlockState east = worldIn.getBlockState(pos.down().east());
-				IBlockState west = worldIn.getBlockState(pos.down().west());
-				IBlockState south = worldIn.getBlockState(pos.down().south());
-				
-				boolean mutation_block_present = (down.getBlock() == ModBlocks.MutationBlock || north.getBlock() == ModBlocks.MutationBlock || east.getBlock() == ModBlocks.MutationBlock || south.getBlock() == ModBlocks.MutationBlock || west.getBlock() == ModBlocks.MutationBlock);
-				
-				if(mutation_block_present) {
+				if(mutate) {
 					maxRand = chances.get(i) - 5;
 				}
 			
 				Block b = mutationBlocks.get(i);
-				if(down.getBlock() == b || north.getBlock() == b || east.getBlock() == b || south.getBlock() == b || west.getBlock() == b) {
+				if(north.getBlock() == b || east.getBlock() == b || south.getBlock() == b || west.getBlock() == b) {
 					if(random.nextInt(maxRand) < 3) {
 						Entity mob = EntityList.createEntityByIDFromName(zombies.get(i), worldIn);
 						mob.setPosition(pos.getX(), pos.getY(), pos.getZ());

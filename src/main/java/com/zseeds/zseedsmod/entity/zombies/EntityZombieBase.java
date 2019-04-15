@@ -1,4 +1,4 @@
-package com.zseeds.zseedsmod.entity;
+package com.zseeds.zseedsmod.entity.zombies;
 
 import javax.annotation.Nullable;
 
@@ -8,11 +8,11 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class EntityZombieCloth extends EntityZombieBase {
-	public static final ResourceLocation LOOT = new ResourceLocation(Reference.MODID, "entities/cloth_zombie");
-	private ResourceLocation mobTexture = new ResourceLocation("zseeds:textures/entity/cloth_zombie.png");
+public class EntityZombieBase extends EntityZombie {
+	public static final ResourceLocation LOOT = new ResourceLocation(Reference.MODID, "entities/base_zombie");
+	protected ResourceLocation mobTexture = new ResourceLocation("zseeds:textures/entity/base_zombie.png");
 	
-    public EntityZombieCloth(World worldIn) {
+    public EntityZombieBase(World worldIn) {
         super(worldIn);
     }
     

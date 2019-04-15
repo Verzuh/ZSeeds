@@ -11,6 +11,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 
+import com.zseeds.zseedsmod.entity.zombies.EntityZombieBase;
+
 @SideOnly(Side.CLIENT)
 public class RenderEntityZombie extends RenderLiving<EntityZombieBase> {
 
