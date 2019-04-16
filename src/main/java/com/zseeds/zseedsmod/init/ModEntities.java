@@ -34,6 +34,9 @@ public class ModEntities {
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "white_zombie"), EntityZombieWhite.class, "WhiteZombie", id++, ZSeeds.instance, 64, 3, true, 0x996600, 0x00ff00);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "snow_zombie"), EntityZombieSnow.class, "SnowZombie", id++, ZSeeds.instance, 64, 3, true, 0x996600, 0x00ff00);
         
+        //Tier 3
+        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "cobblestone_zombie"), EntityZombieCobblestone.class, "CobblestoneZombie", id++, ZSeeds.instance, 64, 3, true, 0x996600, 0x00ff00);
+       
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "stone_zombie"), EntityZombieStone.class, "StoneZombie", id++, ZSeeds.instance, 64, 3, true, 0x996600, 0x00ff00);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "oak_zombie"), EntityZombieOak.class, "OakZombie", id++, ZSeeds.instance, 64, 3, true, 0x996600, 0x00ff00);
         
@@ -55,6 +58,9 @@ public class ModEntities {
         LootTableList.register(EntityZombieClay.LOOT);
         LootTableList.register(EntityZombieWhite.LOOT);
         LootTableList.register(EntityZombieSnow.LOOT);
+        
+        //Tier 3
+        LootTableList.register(EntityZombieCobblestone.LOOT);
         
         LootTableList.register(EntityZombieStone.LOOT);
         LootTableList.register(EntityZombieOak.LOOT);
@@ -82,6 +88,9 @@ public class ModEntities {
     	RenderingRegistry.registerEntityRenderingHandler(EntityZombieWhite.class, RenderEntityZombie.FACTORY);
     	RenderingRegistry.registerEntityRenderingHandler(EntityZombieSnow.class, RenderEntityZombie.FACTORY);
     	
+    	//Tier 3
+    	RenderingRegistry.registerEntityRenderingHandler(EntityZombieCobblestone.class, RenderEntityZombie.FACTORY);
+
     	RenderingRegistry.registerEntityRenderingHandler(EntityZombieStone.class, RenderEntityZombie.FACTORY);
     	RenderingRegistry.registerEntityRenderingHandler(EntityZombieOak.class, RenderEntityZombie.FACTORY);
     	

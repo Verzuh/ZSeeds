@@ -28,6 +28,9 @@ public class ModItems {
 	public static Item ZombieWhiteSeeds;
 	public static Item ZombieSnowSeeds;
 	
+	//Tier 3
+	public static Item ZombieCobblestoneSeeds;
+	
 	public static Item ZombieStoneSeeds;
 	public static Item ZombieOakSeeds;
 	
@@ -69,6 +72,9 @@ public class ModItems {
 		registerRender(ZombieClaySeeds);
 		registerRender(ZombieWhiteSeeds);
 		registerRender(ZombieSnowSeeds);
+		
+		//Tier 3
+		registerRender(ZombieCobblestoneSeeds);
 		
 		registerRender(ZombieStoneSeeds);
 		registerRender(ZombieOakSeeds);	

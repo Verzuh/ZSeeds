@@ -37,6 +37,9 @@ public class ModBlocks {
 	public static ZombieCrop ZombieWhiteCrop;
 	public static ZombieCrop ZombieSnowCrop;
 	
+	//Tier 3
+	public static ZombieCrop ZombieCobblestoneCrop;
+	
 	public static ZombieCrop ZombieStoneCrop;
 	public static ZombieCrop ZombieOakCrop;
 	
@@ -54,12 +57,10 @@ public class ModBlocks {
 		
 		//Tier 1
 		ZombieBaseCrop = new ZombieCrop("zombie_base_crop", new ResourceLocation("zseeds:base_zombie"), "zombie_base_seeds");
-		ZombieBaseCrop.addMutation(Blocks.CLAY, new ResourceLocation("zseeds:clay_zombie"), 19);
+		ZombieBaseCrop.addMutation(Blocks.DIRT, new ResourceLocation("zseeds:dirt_zombie"), 19);
 		ZombieBaseCrop.addMutation(Blocks.GRAVEL, new ResourceLocation("zseeds:gravel_zombie"), 19);
 		ZombieBaseCrop.addMutation(Blocks.SAND, new ResourceLocation("zseeds:sand_zombie"), 19);
-		ZombieBaseCrop.addMutation(Blocks.DIRT, new ResourceLocation("zseeds:dirt_zombie"), 19);
-		ZombieBaseCrop.addMutation(Blocks.STONE, new ResourceLocation("zseeds:stone_zombie"), 19);
-		ZombieBaseCrop.addMutation(Blocks.LOG, new ResourceLocation("zseeds:oak_zombie"), 19);
+		ZombieBaseCrop.addMutation(Blocks.CLAY, new ResourceLocation("zseeds:clay_zombie"), 19);
 		ZombieBaseCrop.addMutation(Blocks.WOOL, new ResourceLocation("zseeds:white_zombie"), 19);
 		ZombieBaseCrop.addMutation(Blocks.SNOW, new ResourceLocation("zseeds:snow_zombie"), 19);
 		
@@ -70,7 +71,10 @@ public class ModBlocks {
 		ZombieClayCrop = new ZombieCrop("zombie_clay_crop", new ResourceLocation("zseeds:clay_zombie"), "zombie_clay_seeds");
 		ZombieWhiteCrop = new ZombieCrop("zombie_white_crop", new ResourceLocation("zseeds:white_zombie"), "zombie_white_seeds");
 		ZombieSnowCrop = new ZombieCrop("zombie_snow_crop", new ResourceLocation("zseeds:snow_zombie"), "zombie_snow_seeds");
-			
+		
+		//Tier 3
+		ZombieCobblestoneCrop = new ZombieCrop("zombie_cobblestone_crop", new ResourceLocation("zseeds:cobblestone_zombie"), "zombie_cobblestone_seeds");
+		
 		ZombieStoneCrop = new ZombieCrop("zombie_stone_crop", new ResourceLocation("zseeds:stone_zombie"), "zombie_stone_seeds");
 		ZombieOakCrop = new ZombieCrop("zombie_oak_crop", new ResourceLocation("zseeds:oak_zombie"), "zombie_oak_seeds");
 		
@@ -100,6 +104,9 @@ public class ModBlocks {
 		event.getRegistry().register(ZombieWhiteCrop);
 		event.getRegistry().register(ZombieSnowCrop);
 		
+		//Tier 3
+		event.getRegistry().register(ZombieCobblestoneCrop);
+		
 		event.getRegistry().register(ZombieStoneCrop);
 		event.getRegistry().register(ZombieOakCrop);
 			
@@ -124,6 +131,9 @@ public class ModBlocks {
 		ModItems.ZombieClaySeeds = new ZombieSeeds(ModBlocks.ZombieClayCrop, Blocks.GRASS, "zombie_clay_seeds").setCreativeTab(ModItems.tabExampleMod);
 		ModItems.ZombieWhiteSeeds = new ZombieSeeds(ModBlocks.ZombieWhiteCrop, Blocks.GRASS, "zombie_white_seeds").setCreativeTab(ModItems.tabExampleMod);
 		ModItems.ZombieSnowSeeds = new ZombieSeeds(ModBlocks.ZombieSnowCrop, Blocks.GRASS, "zombie_snow_seeds").setCreativeTab(ModItems.tabExampleMod);
+		
+		//Tier 3
+		ModItems.ZombieCobblestoneSeeds = new ZombieSeeds(ModBlocks.ZombieCobblestoneCrop, Blocks.GRASS, "zombie_cobblestone_seeds").setCreativeTab(ModItems.tabExampleMod);
 		
 		ModItems.ZombieStoneSeeds = new ZombieSeeds(ModBlocks.ZombieStoneCrop, Blocks.GRASS, "zombie_stone_seeds").setCreativeTab(ModItems.tabExampleMod);
 		ModItems.ZombieOakSeeds = new ZombieSeeds(ModBlocks.ZombieOakCrop, Blocks.GRASS, "zombie_oak_seeds").setCreativeTab(ModItems.tabExampleMod);
@@ -152,6 +162,9 @@ public class ModBlocks {
 		event.getRegistry().register(ModItems.ZombieClaySeeds);
 		event.getRegistry().register(ModItems.ZombieWhiteSeeds);
 		event.getRegistry().register(ModItems.ZombieSnowSeeds);
+		
+		//Tier 3
+		event.getRegistry().register(ModItems.ZombieCobblestoneSeeds);;
 		
 		event.getRegistry().register(ModItems.ZombieStoneSeeds);
 		event.getRegistry().register(ModItems.ZombieOakSeeds);

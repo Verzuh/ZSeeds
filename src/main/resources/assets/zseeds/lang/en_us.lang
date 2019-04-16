@@ -13,6 +13,8 @@ item.zombie_oak_seeds.name=Oak Zombie Seeds
 item.zombie_white_seeds.name=White Zombie Seeds
 item.zombie_snow_seeds.name=Snow Zombie Seeds
 
+item.zombie_cobblestone_seeds.name=Cobblestone Zombie Seeds
+
 item.zombie_iron_seeds.name=Iron Zombie Seeds
 item.zombie_coal_seeds.name=Coal Zombie Seeds
 item.zombie_gold_seeds.name=Gold Zombie Seeds
@@ -31,6 +33,8 @@ entity.StoneZombie.name=Stone Zombie
 entity.OakZombie.name=Oak Zombie
 entity.ClothZombie.name=Cloth Zombie
 entity.SnowZombie.name=Snow Zombie
+
+entity.CobblestoneZombie.name=Cobblestone Zombie
 
 entity.IronZombie.name=Iron Zombie
 entity.CoalZombie.name=Coal Zombie
