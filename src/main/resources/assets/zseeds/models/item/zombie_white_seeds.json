@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "zseeds:items/zombie_cloth_seeds"
+        "layer0": "zseeds:items/zombie_white_seeds"
      },
      
     "display": {

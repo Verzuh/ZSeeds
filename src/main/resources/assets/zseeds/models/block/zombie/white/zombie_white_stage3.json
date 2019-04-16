@@ -2,8 +2,8 @@
     "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
     "parent": "block/crop",
     "textures": {
-        "zombie_arm": "zseeds:blocks/zombie_cloth_arm",
-        "zombie_head": "zseeds:blocks/zombie_cloth_head",
+        "zombie_arm": "zseeds:blocks/zombie_white_arm",
+        "zombie_head": "zseeds:blocks/zombie_white_head",
         "particle": "minecraft:blocks/dirt"
     },
     "display": {
@@ -42,7 +42,7 @@
         {
             "name": "Cube",
             "from": [ 4, 0, 8 ], 
-            "to": [ 12, 6, 16 ], 
+            "to": [ 12, 5, 16 ], 
             "faces": {
                 "north": { "texture": "#zombie_head", "uv": [ 4, 4, 8, 7 ] },
                 "east": { "texture": "#zombie_head", "uv": [ 8, 4, 12, 7 ] },
@@ -54,15 +54,15 @@
         },
         {
             "name": "Cube",
-            "from": [ 0, -6, 1 ], 
-            "to": [ 4, -3, 7 ], 
-            "rotation": { "origin": [ 2.0, -3.0, 14.0 ], "axis": "x", "angle": 22.5 },
+            "from": [ 0, -5, 2 ], 
+            "to": [ 4, -4, 4 ], 
+            "rotation": { "origin": [ 2.0, -6.0, 14.0 ], "axis": "x", "angle": 22.5 },
             "faces": {
-                "north": { "texture": "#zombie_arm", "uv": [ 8, 1, 12, 4 ] },
-                "east": { "texture": "#zombie_arm", "uv": [ 0, 16, 4, 11 ] },
-                "south": { "texture": "#zombie_arm", "uv": [ 4, 16, 8, 14 ] },
-                "west": { "texture": "#zombie_arm", "uv": [ 8, 16, 12, 11 ] },
-                "up": { "texture": "#zombie_arm", "uv": [ 4, 16, 8, 10 ] },
+                "north": { "texture": "#zombie_arm", "uv": [ 8, 0, 12, 1 ] },
+                "east": { "texture": "#zombie_arm", "uv": [ 2, 15, 4, 16 ] },
+                "south": { "texture": "#zombie_arm", "uv": [ 4, 15, 8, 16 ] },
+                "west": { "texture": "#zombie_arm", "uv": [ 8, 15, 10, 16 ] },
+                "up": { "texture": "#zombie_arm", "uv": [ 4, 14, 8, 16 ] },
                 "down": { "texture": "#zombie_arm", "uv": [ 12, 14, 16, 16 ] }
             }
         }

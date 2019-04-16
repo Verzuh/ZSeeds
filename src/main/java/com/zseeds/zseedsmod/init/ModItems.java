@@ -27,7 +27,7 @@ public class ModItems {
 	public static Item ZombieDirtSeeds;
 	public static Item ZombieStoneSeeds;
 	public static Item ZombieOakSeeds;
-	public static Item ZombieClothSeeds;
+	public static Item ZombieWhiteSeeds;
 	public static Item ZombieSnowSeeds;
 	
 	public static Item ZombieIronSeeds;
@@ -68,7 +68,7 @@ public class ModItems {
 		registerRender(ZombieDirtSeeds);
 		registerRender(ZombieStoneSeeds);
 		registerRender(ZombieOakSeeds);
-		registerRender(ZombieClothSeeds);
+		registerRender(ZombieWhiteSeeds);
 		registerRender(ZombieSnowSeeds);
 		
 		registerRender(ZombieIronSeeds);

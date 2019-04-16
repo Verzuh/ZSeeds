@@ -33,7 +33,7 @@ public class ModEntities {
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "dirt_zombie"), EntityZombieDirt.class, "DirtZombie", id++, ZSeeds.instance, 64, 3, true, 0x996600, 0x00ff00);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "stone_zombie"), EntityZombieStone.class, "StoneZombie", id++, ZSeeds.instance, 64, 3, true, 0x996600, 0x00ff00);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "oak_zombie"), EntityZombieOak.class, "OakZombie", id++, ZSeeds.instance, 64, 3, true, 0x996600, 0x00ff00);
-        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "cloth_zombie"), EntityZombieCloth.class, "ClothZombie", id++, ZSeeds.instance, 64, 3, true, 0x996600, 0x00ff00);
+        EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "white_zombie"), EntityZombieWhite.class, "WhiteZombie", id++, ZSeeds.instance, 64, 3, true, 0x996600, 0x00ff00);
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "snow_zombie"), EntityZombieSnow.class, "SnowZombie", id++, ZSeeds.instance, 64, 3, true, 0x996600, 0x00ff00);
         
         EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "iron_zombie"), EntityZombieIron.class, "IronZombie", id++, ZSeeds.instance, 64, 3, true, 0x996600, 0x00ff00);
@@ -54,7 +54,7 @@ public class ModEntities {
         LootTableList.register(EntityZombieDirt.LOOT);
         LootTableList.register(EntityZombieStone.LOOT);
         LootTableList.register(EntityZombieOak.LOOT);
-        LootTableList.register(EntityZombieCloth.LOOT);
+        LootTableList.register(EntityZombieWhite.LOOT);
         LootTableList.register(EntityZombieSnow.LOOT);
         
         LootTableList.register(EntityZombieIron.LOOT);
@@ -79,7 +79,7 @@ public class ModEntities {
     	RenderingRegistry.registerEntityRenderingHandler(EntityZombieDirt.class, RenderEntityZombie.FACTORY);
     	RenderingRegistry.registerEntityRenderingHandler(EntityZombieStone.class, RenderEntityZombie.FACTORY);
     	RenderingRegistry.registerEntityRenderingHandler(EntityZombieOak.class, RenderEntityZombie.FACTORY);
-    	RenderingRegistry.registerEntityRenderingHandler(EntityZombieCloth.class, RenderEntityZombie.FACTORY);
+    	RenderingRegistry.registerEntityRenderingHandler(EntityZombieWhite.class, RenderEntityZombie.FACTORY);
     	RenderingRegistry.registerEntityRenderingHandler(EntityZombieSnow.class, RenderEntityZombie.FACTORY);
     	
         RenderingRegistry.registerEntityRenderingHandler(EntityZombieIron.class, RenderEntityZombie.FACTORY);
