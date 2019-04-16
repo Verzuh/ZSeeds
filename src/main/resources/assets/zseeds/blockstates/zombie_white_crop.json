@@ -4,10 +4,10 @@
         "model": "cross"
     },
     "variants": {
-        "age=0": { "model": "zseeds:zombie/white/zombie_white_stage0" },
-        "age=1": { "model": "zseeds:zombie/white/zombie_white_stage1" },
-        "age=2": { "model": "zseeds:zombie/white/zombie_white_stage2" },
-        "age=3": { "model": "zseeds:zombie/white/zombie_white_stage3" },
-        "age=4": { "model": "zseeds:zombie/white/zombie_white_stage4" }
+        "age=0": { "model": "zseeds:zombie/white/stage0" },
+        "age=1": { "model": "zseeds:zombie/white/stage1" },
+        "age=2": { "model": "zseeds:zombie/white/stage2" },
+        "age=3": { "model": "zseeds:zombie/white/stage3" },
+        "age=4": { "model": "zseeds:zombie/white/stage4" }
     }
 }
