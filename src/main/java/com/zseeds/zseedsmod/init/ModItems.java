@@ -21,14 +21,15 @@ public class ModItems {
 	public static Item ZombieBaseSeeds;
 	
 	//Tier 2
-	public static Item ZombieClaySeeds;
+	public static Item ZombieDirtSeeds;
 	public static Item ZombieGravelSeeds;
 	public static Item ZombieSandSeeds;
-	public static Item ZombieDirtSeeds;
-	public static Item ZombieStoneSeeds;
-	public static Item ZombieOakSeeds;
+	public static Item ZombieClaySeeds;
 	public static Item ZombieWhiteSeeds;
 	public static Item ZombieSnowSeeds;
+	
+	public static Item ZombieStoneSeeds;
+	public static Item ZombieOakSeeds;
 	
 	public static Item ZombieIronSeeds;
 	public static Item ZombieCoalSeeds;
@@ -62,14 +63,15 @@ public class ModItems {
 		registerRender(ZombieBaseSeeds);
 		
 		//Tier 2
-		registerRender(ZombieClaySeeds);
+		registerRender(ZombieDirtSeeds);
 		registerRender(ZombieGravelSeeds);
 		registerRender(ZombieSandSeeds);
-		registerRender(ZombieDirtSeeds);
-		registerRender(ZombieStoneSeeds);
-		registerRender(ZombieOakSeeds);
+		registerRender(ZombieClaySeeds);
 		registerRender(ZombieWhiteSeeds);
 		registerRender(ZombieSnowSeeds);
+		
+		registerRender(ZombieStoneSeeds);
+		registerRender(ZombieOakSeeds);	
 		
 		registerRender(ZombieIronSeeds);
 		registerRender(ZombieCoalSeeds);
