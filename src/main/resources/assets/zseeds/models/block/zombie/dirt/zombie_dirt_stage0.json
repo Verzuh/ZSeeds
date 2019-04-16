@@ -1,0 +1,55 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "parent": "block/crop",
+    "textures": {
+        "zombie_head": "zseeds:blocks/zombie_dirt_head",
+        "particle": "minecraft:blocks/dirt"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.4, 0.4, 0.4 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 75, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    },
+    "elements": [
+        {
+            "name": "Cube",
+            "from": [ 7, 0, 10 ], 
+            "to": [ 9, 1, 12 ], 
+            "faces": {
+                "north": { "texture": "#zombie_head", "uv": [ 5, 4, 7, 5 ] },
+                "east": { "texture": "#zombie_head", "uv": [ 9, 4, 11, 5 ] },
+                "south": { "texture": "#zombie_head", "uv": [ 5, 0, 7, 1 ] },
+                "west": { "texture": "#zombie_head", "uv": [ 1, 4, 3, 5 ] },
+                "up": { "texture": "#zombie_head", "uv": [ 5, 1, 7, 3 ] },
+                "down": { "texture": "#zombie_head", "uv": [ 9, 1, 11, 3 ] }
+            }
+        }
+    ]
+}
