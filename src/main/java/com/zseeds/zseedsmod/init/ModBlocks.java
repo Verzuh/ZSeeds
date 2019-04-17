@@ -66,6 +66,8 @@ public class ModBlocks {
 		
 		//Tier 2
 		ZombieDirtCrop = new ZombieCrop("zombie_dirt_crop", new ResourceLocation("zseeds:dirt_zombie"), "zombie_dirt_seeds");
+		ZombieDirtCrop.addMutation(Blocks.COBBLESTONE, new ResourceLocation("zseeds:cobblestone_zombie"), 19);
+		
 		ZombieGravelCrop = new ZombieCrop("zombie_gravel_crop", new ResourceLocation("zseeds:gravel_zombie"), "zombie_gravel_seeds");
 		ZombieSandCrop = new ZombieCrop("zombie_sand_crop", new ResourceLocation("zseeds:sand_zombie"), "zombie_sand_seeds");
 		ZombieClayCrop = new ZombieCrop("zombie_clay_crop", new ResourceLocation("zseeds:clay_zombie"), "zombie_clay_seeds");
@@ -74,18 +76,35 @@ public class ModBlocks {
 		
 		//Tier 3
 		ZombieCobblestoneCrop = new ZombieCrop("zombie_cobblestone_crop", new ResourceLocation("zseeds:cobblestone_zombie"), "zombie_cobblestone_seeds");
+		ZombieCobblestoneCrop.addMutation(Blocks.STONE, new ResourceLocation("zseeds:stone_zombie"), 19);
 		
+		//Tier 4
 		ZombieStoneCrop = new ZombieCrop("zombie_stone_crop", new ResourceLocation("zseeds:stone_zombie"), "zombie_stone_seeds");
-		ZombieOakCrop = new ZombieCrop("zombie_oak_crop", new ResourceLocation("zseeds:oak_zombie"), "zombie_oak_seeds");
+		ZombieStoneCrop.addMutation(Blocks.IRON_BLOCK, new ResourceLocation("zseeds:iron_zombie"), 24);
+		ZombieStoneCrop.addMutation(Blocks.COAL_BLOCK, new ResourceLocation("zseeds:coal_zombie"), 24);
 		
+		//Tier 5
 		ZombieIronCrop = new ZombieCrop("zombie_iron_crop", new ResourceLocation("zseeds:iron_zombie"), "zombie_iron_seeds");
+		ZombieIronCrop.addMutation(Blocks.GOLD_BLOCK, new ResourceLocation("zseeds:gold_zombie"), 29);
+		ZombieIronCrop.addMutation(Blocks.REDSTONE_BLOCK, new ResourceLocation("zseeds:redstone_zombie"), 29);
+		ZombieIronCrop.addMutation(Blocks.LAPIS_BLOCK, new ResourceLocation("zseeds:lapis_zombie"), 29);
+		
 		ZombieCoalCrop = new ZombieCrop("zombie_coal_crop", new ResourceLocation("zseeds:coal_zombie"), "zombie_coal_seeds");
+
+		//Tier 6
 		ZombieGoldCrop = new ZombieCrop("zombie_gold_crop", new ResourceLocation("zseeds:gold_zombie"), "zombie_gold_seeds");
+		ZombieGoldCrop.addMutation(Blocks.DIAMOND_BLOCK, new ResourceLocation("zseeds:diamond_zombie"), 34);
+		ZombieGoldCrop.addMutation(Blocks.EMERALD_BLOCK, new ResourceLocation("zseeds:emerald_zombie"), 34);
+
 		ZombieLapisCrop = new ZombieCrop("zombie_lapis_crop", new ResourceLocation("zseeds:lapis_zombie"), "zombie_lapis_seeds");
 		ZombieRedstoneCrop = new ZombieCrop("zombie_redstone_crop", new ResourceLocation("zseeds:redstone_zombie"), "zombie_redstone_seeds");
+		
+		//Tier 7
 		ZombieEmeraldCrop = new ZombieCrop("zombie_emerald_crop", new ResourceLocation("zseeds:emerald_zombie"), "zombie_emerald_seeds");
 		ZombieDiamondCrop = new ZombieCrop("zombie_diamond_crop", new ResourceLocation("zseeds:diamond_zombie"), "zombie_diamond_seeds");
-	
+
+		ZombieOakCrop = new ZombieCrop("zombie_oak_crop", new ResourceLocation("zseeds:oak_zombie"), "zombie_oak_seeds");
+		
 		initSeeds();
 	}
 	
